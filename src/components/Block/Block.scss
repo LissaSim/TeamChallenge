@@ -1,0 +1,43 @@
+.block {
+    display: flex;
+    gap: 12px;
+
+    &:hover{
+        & .block__body-desc{
+            color: #353395;
+            & h4{
+                color: #353395;
+               
+            }
+        }
+       & .block__text{
+        color: #353395;
+        }
+
+    }
+
+    &__body-desc {
+        & h4 {
+            margin-bottom: 10px;
+            font-size:1em;
+            font-family: 'Bitter', serif;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 116.667%;
+        }
+    
+    }
+    &__text{
+         font-size: 14px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        line-height: 1em;
+    }
+    &__img{
+        &>img{
+            width: 100px;
+        }
+    }
+}

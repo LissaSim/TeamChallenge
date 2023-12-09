@@ -1,0 +1,15 @@
+.stars{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &__rait{
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 116%;
+    }
+    &__wrap{
+        display: flex;
+        gap: 4px;
+    }
+}
+

@@ -1,0 +1,52 @@
+.footer {
+    grid-area: 3/1/4/2;
+    padding: 40px 0;
+    background-color: #353395;
+    color: #FAFAFA;
+    font-size: 12px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+       
+    }
+
+    &__lists {
+        width: 76%;
+        display: flex;
+        justify-content: space-between;
+    
+    }
+
+    &__list {
+        
+        &>li {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        &>li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__list-title {
+        margin-bottom: 12px;
+        font-weight: 700;
+        font-family: 'Bitter', serif;
+    }
+
+    &__footer {
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+
+    }
+
+    &__logo {
+        height: 58px;
+    }
+}
