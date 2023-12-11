@@ -1,13 +1,13 @@
 import '../../scss/general.scss'
 import './Footer.scss'
-import logo from '../../images/FS2S-head.svg'
+import logoFooter from '../../images/FS2S-footer.svg'
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__container">
       <div className="footer__footer">
-          <img className='footer__logo' src={logo} alt="FS2S" />
+          <img className='footer__logo' src={logoFooter} alt="FS2S" />
           <span>© 2023 FS2S, Inc.</span>
         </div>
         <div className="footer__lists">

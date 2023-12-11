@@ -1,6 +1,7 @@
 .card {
+transition: transform 0.3s linear;
     &:hover{
- 
+        transform: scale(1.02);
             color: #353395;
    
     }

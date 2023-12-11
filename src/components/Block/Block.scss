@@ -1,11 +1,14 @@
 .block {
     display: flex;
     gap: 12px;
+    transition: transform 0.3s linear;
 
     &:hover{
+        transform: scale(1.02);
         & .block__body-desc{
             color: #353395;
             & h4{
+
                 color: #353395;
                
             }
