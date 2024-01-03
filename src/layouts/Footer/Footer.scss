@@ -19,8 +19,17 @@
     }
 
     &__list {
-        
-        &>li {
+        & a{
+            text-decoration: none;
+            color:#fff;
+            &:focus{
+                color:#fff;
+            }
+            &:hover{
+                color:#FAFAFA
+            }
+        }
+        &>li>a {
             display: flex;
             align-items: center;
             gap: 4px;

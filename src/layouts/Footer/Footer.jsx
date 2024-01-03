@@ -14,33 +14,34 @@ function Footer() {
           <div >
             <h3 className="footer__list-title">Категорії курсів</h3>
             <ul className="footer__list">
-              <li>3D та анімація</li>      
-              <li>Аналітика даних </li>
-              <li>Дизайн</li>
-              <li>Інтернет та Веб розробка</li>
-              <li>Кібербезпека</li>
-              <li>Розробка мобільних додатків</li>
-              <li>Розробка програмного забезбечення</li>
-              <li>Управління проєктами та ресурсами</li>
+              <li><a href="#">3D та анімація</a></li>      
+              <li><a href="#">Аналітика даних</a> </li>
+              <li><a href="#">Дизайн</a></li>
+              <li><a href="#">Інтернет та Веб розробка</a></li>
+              <li><a href="#">Кібербезпека</a></li>
+              <li><a href="#">Розробка мобільних додатків</a></li>
+              <li><a href="#">Розробка програмного забезбечення</a></li>
+              <li><a href="#">Управління проєктами та ресурсами</a></li>
           
             </ul>
           </div>
           <div>
             <h3 className="footer__list-title">Категорії статей</h3>
             <ul className="footer__list">
-              <li>Аналітика даних </li>
-              <li>Дизайн</li>
-              <li>Інтернет та Веб розробка</li>
-              <li>Кібербезпека</li>
-              <li>Розробка ігор</li>
-              <li>Розробка програмного забезбечення</li>
-              <li>Управління проєктами та ресурсами</li>
+              <li><a href="#">Аналітика даних</a> </li>
+              <li><a href="#">Дизайн</a></li>
+              <li><a href="#">Інтернет та Веб розробка</a></li>
+              <li><a href="#">Кібербезпека</a></li>
+              <li><a href="#">Розробка ігор</a></li>
+              <li><a href="#">Розробка програмного забезбечення</a></li>
+              <li><a href="#">Управління проєктами та ресурсами</a></li>
             </ul>
           </div>
           <div>
             <h3 className="footer__list-title">Команда FS2S</h3>
             <ul className="footer__list">
               <li>
+                <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -54,8 +55,11 @@ function Footer() {
                   />
                 </svg>
                 <span>Backend - Гліб </span>
+                </a>
+              
               </li>
               <li>
+                <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -69,8 +73,11 @@ function Footer() {
                   />
                 </svg>
                 <span>Designer - Анна Кохно</span>
+                </a>
+         
               </li>
               <li>
+                <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -84,8 +91,11 @@ function Footer() {
                   />
                 </svg>
                 <span>Frontend - Єлизавета </span>
+                </a>
+            
               </li>
               <li>
+                <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -99,8 +109,11 @@ function Footer() {
                   />
                 </svg>
                 <span>Frontend - Тетяна Федоренко</span>
+                </a>
+              
               </li>
               <li>
+                <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -114,8 +127,11 @@ function Footer() {
                   />
                 </svg>
                 <span>Project manager - Юлія Горак</span>
+                </a>
+      
               </li>
               <li>
+                <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -129,6 +145,8 @@ function Footer() {
                   />
                 </svg>
                 <span>QA - Ростислав Пархоменко</span>
+                </a>
+     
               </li>
             </ul>
           </div>
