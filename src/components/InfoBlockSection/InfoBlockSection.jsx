@@ -16,7 +16,7 @@ const InfoBlockSection = (props) => {
     <section className = {`infoBlockSection ${props.classWrap}`}>
         {
         React.Children.map(props.children,(child,index)=>{
-            console.log(child)
+        
 
                 if(child.type == 'h2'){
                 return child;

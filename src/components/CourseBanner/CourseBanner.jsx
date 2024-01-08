@@ -1,10 +1,12 @@
 import './courseBanner.scss';
 import Stars from '../Stars/Stars';
 import Button from '../Button/Button';
+import { useState } from 'react';
 
 import img from './img.png';
 
 const CourseBanner = (props) => {
+const {btnName} = props;
     return (
         <section className="courseBanner">
             <div className="courseBanner__wrap">
@@ -25,7 +27,7 @@ const CourseBanner = (props) => {
                             </span>
                             <span className="courseBanner__cost-full">$69,99 </span>
                         </div>
-                        <Button content={props.btnName } classStyle='button--full'/> 
+                        <Button  content={btnName} classStyle='button--full'/> 
 
                     </div>
 
