@@ -128,7 +128,7 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>QA - Ростислав Пархоменко</span>
+                <span>QA - Ростислав Пархоменко ff</span>
               </li>
             </ul>
           </div>
