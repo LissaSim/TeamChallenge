@@ -14,6 +14,7 @@ function Footer() {
           <div >
             <h3 className="footer__list-title">Категорії курсів</h3>
             <ul className="footer__list">
+<<<<<<< HEAD
               <li><a href="#">3D та анімація</a></li>      
               <li><a href="#">Аналітика даних</a> </li>
               <li><a href="#">Дизайн</a></li>
@@ -22,12 +23,23 @@ function Footer() {
               <li><a href="#">Розробка мобільних додатків</a></li>
               <li><a href="#">Розробка програмного забезбечення</a></li>
               <li><a href="#">Управління проєктами та ресурсами</a></li>
+=======
+              <li>3D та анімація</li>      
+              <li>Аналітика даних </li>
+              <li>Дизайн</li>
+              <li>Інтернет та Веб розробка</li>
+              <li>Кібербезпека</li>
+              <li>Розробка мобільних додатків</li>
+              <li>Розробка програмного забезбечення</li>
+              <li>Управління проєктами та ресурсами</li>
+>>>>>>> master
           
             </ul>
           </div>
           <div>
             <h3 className="footer__list-title">Категорії статей</h3>
             <ul className="footer__list">
+<<<<<<< HEAD
               <li><a href="#">Аналітика даних</a> </li>
               <li><a href="#">Дизайн</a></li>
               <li><a href="#">Інтернет та Веб розробка</a></li>
@@ -35,13 +47,25 @@ function Footer() {
               <li><a href="#">Розробка ігор</a></li>
               <li><a href="#">Розробка програмного забезбечення</a></li>
               <li><a href="#">Управління проєктами та ресурсами</a></li>
+=======
+              <li>Аналітика даних </li>
+              <li>Дизайн</li>
+              <li>Інтернет та Веб розробка</li>
+              <li>Кібербезпека</li>
+              <li>Розробка ігор</li>
+              <li>Розробка програмного забезбечення</li>
+              <li>Управління проєктами та ресурсами</li>
+>>>>>>> master
             </ul>
           </div>
           <div>
             <h3 className="footer__list-title">Команда FS2S</h3>
             <ul className="footer__list">
               <li>
+<<<<<<< HEAD
                 <a href="#">
+=======
+>>>>>>> master
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -55,11 +79,16 @@ function Footer() {
                   />
                 </svg>
                 <span>Backend - Гліб </span>
+<<<<<<< HEAD
                 </a>
               
               </li>
               <li>
                 <a href="#">
+=======
+              </li>
+              <li>
+>>>>>>> master
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -73,11 +102,16 @@ function Footer() {
                   />
                 </svg>
                 <span>Designer - Анна Кохно</span>
+<<<<<<< HEAD
                 </a>
          
               </li>
               <li>
                 <a href="#">
+=======
+              </li>
+              <li>
+>>>>>>> master
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -91,11 +125,16 @@ function Footer() {
                   />
                 </svg>
                 <span>Frontend - Єлизавета </span>
+<<<<<<< HEAD
                 </a>
             
               </li>
               <li>
                 <a href="#">
+=======
+              </li>
+              <li>
+>>>>>>> master
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -109,11 +148,16 @@ function Footer() {
                   />
                 </svg>
                 <span>Frontend - Тетяна Федоренко</span>
+<<<<<<< HEAD
                 </a>
               
               </li>
               <li>
                 <a href="#">
+=======
+              </li>
+              <li>
+>>>>>>> master
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -127,11 +171,16 @@ function Footer() {
                   />
                 </svg>
                 <span>Project manager - Юлія Горак</span>
+<<<<<<< HEAD
                 </a>
       
               </li>
               <li>
                 <a href="#">
+=======
+              </li>
+              <li>
+>>>>>>> master
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -145,8 +194,11 @@ function Footer() {
                   />
                 </svg>
                 <span>QA - Ростислав Пархоменко</span>
+<<<<<<< HEAD
                 </a>
      
+=======
+>>>>>>> master
               </li>
             </ul>
           </div>

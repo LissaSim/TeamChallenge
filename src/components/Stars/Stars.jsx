@@ -5,9 +5,7 @@ import starPart from '../../images/starPart.svg';
 function Stars (){
     return(
         <div className="stars">
-
-          
-        <span className="stars__rait">4,5</span>
+        <span className="stars__rait"></span>
         <div className="stars__wrap ">
           <img src={starFill} alt="" />
           <img src={starFill} alt="" />
