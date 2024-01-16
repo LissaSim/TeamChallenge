@@ -1,0 +1,48 @@
+.popular {
+    &__track {
+        display: flex;
+        gap: 26px;
+    }
+
+    &__wrap {
+        position: relative;
+    }
+
+    &__nav {
+        position: absolute;
+        z-index: 2;
+        display: none;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background:#D1CFFF;       
+        border-radius: 50%;
+        bottom: 50%;        
+        transition: background 0.5s linear;
+        &:hover{
+            background:darken(#D1CFFF,5)
+        }
+        & img{
+            height: 10px;
+        }
+        // add class active for active btn
+        &.active{
+            display: block;
+        }
+
+        &--left {
+            left: -20px;
+
+        }
+
+        &--right {
+            right: -20px;
+
+        }
+    }
+    & .card{
+        &__text{
+            display: none;
+        }
+    }
+}

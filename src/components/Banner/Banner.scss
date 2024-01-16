@@ -1,0 +1,35 @@
+.banner{
+    padding: 80px 0 58px;
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+       
+       
+    }
+    & .title{
+        margin: 0 0 36px;
+        font-size: 50px;
+        font-family: 'Bitter', serif;
+        font-weight: 700;
+        line-height: 1;
+        color:#5D59FF;
+        &+p{
+            font-size: 20px;
+            line-height: 170%;
+        }
+    }
+    &__wrap,
+    &__img
+    {
+        flex-basis: 48%;
+        max-width: 550px;
+        max-height: 300px;
+        & img{
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+        }
+    }
+
+}

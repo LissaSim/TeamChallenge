@@ -1,0 +1,31 @@
+.button{
+
+    padding: 5px 20px;
+    border-radius: 15px;
+    border:none;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 200%;
+    &--line{
+        background:transparent;
+        border: 2px solid #5D59FF;
+        color:#5D59FF;
+        transition: all 0.3s ease;
+        &:hover{
+            border-color: #353395;
+            color:#353395;
+        }
+    }
+    &--full{
+        background:#5D59FF;
+        border: 2px solid #5D59FF;
+        color:#fff;
+        transition: all 0.3s ease;
+        &:hover{
+            border-color: #353395;
+            background:#353395;
+        }
+    }
+}
