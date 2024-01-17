@@ -1,0 +1,8 @@
+.description {
+    padding-bottom: 40px;
+    &__content{
+        &>p:not(:last-child){
+            margin-bottom: 20px;
+        }
+    }
+}
