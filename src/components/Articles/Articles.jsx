@@ -1,8 +1,8 @@
 import '../../scss/general.scss';
 import './Articles.scss';
 import Card from '../Card/Card';
-import arrowRight from '../../images/arrow-right.svg';
-import arrowLeft from '../../images/arrow-left.svg';
+// import arrowRight from '../../images/arrow-right.svg';
+// import arrowLeft from '../../images/arrow-left.svg';
 
 function Articles() {
     return (

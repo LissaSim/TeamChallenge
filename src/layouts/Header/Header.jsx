@@ -1,7 +1,7 @@
 import '../../scss/general.scss'
 import './Header.scss'
 import logo from '../../images/FS2S-head.svg'
-import heart from '../../images/heart.svg'
+// import heart from '../../images/heart.svg'
 import arrow from '../../images/arrow.svg'
 import search from '../../images/search.svg'
 import Button from '../../components/Button/Button';
