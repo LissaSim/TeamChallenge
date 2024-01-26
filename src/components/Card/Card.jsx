@@ -18,7 +18,7 @@ const Card = (props) => {
           </div>
           <div className="card__rait">
             <Stars />
-            {rating}
+           <span> {rating}</span>
             <div className="card__cost">
               <span>{price}</span>
               <span>
