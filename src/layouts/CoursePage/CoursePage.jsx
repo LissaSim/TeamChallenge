@@ -41,7 +41,7 @@ const CoursePage = () => {
                     <p>Об'єкт String</p>
                  
                 </InfoBlockSection>
-                <InfoBlockSection classWrap="row comments line">
+                <InfoBlockSection classWrap="row comments line" link='See all'>
                     <h2 className="title-block">Відгуки</h2>
                     <Comment />
                     <Comment />

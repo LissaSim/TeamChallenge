@@ -14,7 +14,9 @@ const InfoBlockSection = (props) => {
 
   return (
     <section className = {`infoBlockSection ${props.classWrap}`}>
-        {
+
+      <div className="infoBlockSection__title-block">
+      {
         React.Children.map(props.children,(child,index)=>{
         
 
@@ -23,6 +25,11 @@ const InfoBlockSection = (props) => {
                 }
               })
         }
+        {/* here we add link for going to site */}
+        {props.link ? <a href="#">{props.link}</a> : '' }
+        
+      </div>
+   
   
  
       <div className="infoBlockSection__wrap">

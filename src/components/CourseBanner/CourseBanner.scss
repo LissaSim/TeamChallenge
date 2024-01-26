@@ -1,11 +1,13 @@
 .courseBanner {
-    padding-top: 110px;
-    padding-bottom: 80px;
-    &>h1{
+    padding-top: 90px;
+    padding-bottom: 60px;
+
+    &>h1 {
         margin-bottom: 22px;
     }
-    & .title-block{
-        &::after{
+
+    & .title-block {
+        &::after {
             display: none;
         }
     }
@@ -14,6 +16,10 @@
         display: flex;
         gap: 20px;
         justify-content: space-between;
+    }
+
+    &__block {
+        margin-bottom: 22px;
     }
 
     &__inner {
@@ -28,13 +34,26 @@
 
     &__raite {
         display: flex;
+        align-items: center;
         gap: 10px;
         margin-top: 22px;
+        color: #828282;
+        font-size: 14px;
 
-        &>span {
-            color: #828282;
-            font-size: 14px;
+        & span:first-child {
+            color: #1E1E1E;
+            font-family: Bitter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
         }
+    }
+
+    &__labels {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 18px;
     }
 
     & .button {
@@ -50,22 +69,25 @@
             margin-inline-end: 10px;
             color: #1E1E1E;
             font-family: Bitter;
-            font-size: 24px;         
-            font-weight: 700;        
+            font-size: 24px;
+            font-weight: 700;
         }
 
         &-full {
             color: #828282;
             font-family: Open Sans;
-            font-size: 16px;       
-            font-weight: 400;       
+            font-size: 16px;
+            font-weight: 400;
             text-decoration-line: strikethrough;
         }
     }
-    &__img{
-        &>img{
-            width: 100%;
-            height: auto;
+
+    &__img {
+        &>img {
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+           
         }
     }
 }

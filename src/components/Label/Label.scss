@@ -1,0 +1,18 @@
+.label {
+    width: fit-content;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: #D1CFFF;
+    color: #1E1E1E;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &__wrap{
+        display: flex;
+        align-items:center;      
+        gap: 8px;
+    }
+
+}
