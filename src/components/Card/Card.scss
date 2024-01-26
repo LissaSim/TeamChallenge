@@ -1,11 +1,19 @@
 .card {
-transition: transform 0.3s linear;
-    &:hover{
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s linear;
+
+    &:hover {
         transform: scale(1.02);
-            color: #353395;
-   
+        color: #353395;
+
     }
+
     &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
         &-desc {
             margin-bottom: 9px;
 
@@ -18,6 +26,9 @@ transition: transform 0.3s linear;
             }
         }
     }
+&__rait{
+    flex-basis: 1;
+}
 
     &__img {
         margin-bottom: 10px;
@@ -36,14 +47,14 @@ transition: transform 0.3s linear;
         margin-top: 9px;
         font-size: 1em;
         font-weight: 400;
-        color:#1E1E1E;
+        color: #1E1E1E;
     }
 
     &__text {
         font-size: 16px;
         font-weight: 400;
-       
-        & p{
+
+        & p {
             font-size: 14px;
             overflow: hidden;
             display: -webkit-box;
@@ -52,5 +63,27 @@ transition: transform 0.3s linear;
             line-height: 1em;
             transition: color 0.3s linear;
         }
+    }
+
+    &__rait-star {
+        display: flex;
+        gap: 8px;
+        color: #1E1E1E;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__cost-sale {
+        position: relative;
+        top: 2px;
+        margin-inline-start: 5px;
+        color: #1E1E1E;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: strikethrough;
     }
 }
