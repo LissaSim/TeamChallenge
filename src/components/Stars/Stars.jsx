@@ -5,11 +5,7 @@ import starPart from '../../images/starPart.svg';
 function Stars (){
     return(
         <div className="stars">
-<<<<<<< HEAD
-
-=======
       
->>>>>>> master
         <div className="stars__wrap ">
           <img src={starFill} alt="" />
           <img src={starFill} alt="" />
