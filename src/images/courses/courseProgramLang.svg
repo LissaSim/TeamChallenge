@@ -1,0 +1,36 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.783871" y="0.783871" width="98.4323" height="98.4323" rx="3.13548" fill="#FAFAFA"/>
+<rect x="0.783871" y="0.783871" width="98.4323" height="98.4323" rx="3.13548" stroke="#5D59FF" stroke-width="1.56774"/>
+<g clip-path="url(#clip0_32_2054)">
+<rect width="44.6429" height="29.0178" transform="translate(30.3569 33)" fill="#5D59FF"/>
+<rect width="44.6429" height="4.46428" transform="translate(30.3564 33)" fill="#1E1E1E"/>
+<ellipse cx="32.5885" cy="35.2321" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<ellipse cx="34.3742" cy="35.2321" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<ellipse cx="36.1603" cy="35.2321" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+</g>
+<g clip-path="url(#clip1_32_2054)">
+<rect width="44.6429" height="29.0178" transform="translate(24.9995 38.3569)" fill="#D1CFFF"/>
+<rect width="44.6429" height="4.46428" transform="translate(24.9995 38.3569)" fill="#1E1E1E"/>
+<ellipse cx="27.2316" cy="40.589" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<ellipse cx="29.0172" cy="40.589" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<ellipse cx="30.8029" cy="40.589" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<line x1="46.4282" y1="49.0711" x2="58.4818" y2="49.0712" stroke="#353395" stroke-width="0.892856"/>
+<line x1="46.4282" y1="51.7494" x2="67.8568" y2="51.7494" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="58.9282" y1="54.4281" x2="67.8568" y2="54.4281" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="46.4282" y1="57.1068" x2="67.8568" y2="57.1068" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="46.4282" y1="59.7855" x2="56.6961" y2="59.7855" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="57.5889" y1="59.7855" x2="67.8567" y2="59.7855" stroke="#1E1E1E" stroke-width="0.892856"/>
+<rect width="17.8571" height="17.8571" transform="translate(26.7852 44.6069)" fill="#D1CFFF"/>
+<line y1="-0.328944" x2="7.92202" y2="-0.328944" transform="matrix(-0.664367 0.747407 -0.747412 -0.664361 38.3457 50.4106)" stroke="#FAFAFA" stroke-width="0.657888"/>
+<path d="M33.4113 51.8231L29.9756 52.171L32.388 54.6866" stroke="#FAFAFA" stroke-width="0.657888" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M39.04 52.7129L41.4524 55.2285L38.0167 55.5763" stroke="#FAFAFA" stroke-width="0.657888" stroke-linecap="square" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_32_2054">
+<rect width="44.6429" height="29.0178" fill="white" transform="translate(30.3569 33)"/>
+</clipPath>
+<clipPath id="clip1_32_2054">
+<rect width="44.6429" height="29.0178" fill="white" transform="translate(24.9995 38.3569)"/>
+</clipPath>
+</defs>
+</svg>

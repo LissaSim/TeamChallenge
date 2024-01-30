@@ -1,12 +1,12 @@
 import './Button.scss';
 
-function Button({classStyle,content}) {
+function Button({classStyle,content, loadingNewItems}) {
     //const buttonStyle = props.classStyle;
     const style = `button ${classStyle}`
  
 
     return (
-       < button  className = {style}>
+       < button  className = {style} onClick={loadingNewItems}>
           {content}
         </button>
     )

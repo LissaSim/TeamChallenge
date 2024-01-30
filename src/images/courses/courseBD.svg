@@ -1,0 +1,33 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.783871" y="0.783871" width="98.4323" height="98.4323" rx="3.13548" fill="#FAFAFA"/>
+<rect x="0.783871" y="0.783871" width="98.4323" height="98.4323" rx="3.13548" stroke="#5D59FF" stroke-width="1.56774"/>
+<g clip-path="url(#clip0_32_2094)">
+<rect width="44.6429" height="29.0178" transform="translate(30.3574 33)" fill="#5D59FF"/>
+<rect width="44.6429" height="4.46428" transform="translate(30.3569 33)" fill="#1E1E1E"/>
+<ellipse cx="32.589" cy="35.2321" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<ellipse cx="34.3747" cy="35.2321" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<ellipse cx="36.1608" cy="35.2321" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+</g>
+<g clip-path="url(#clip1_32_2094)">
+<rect width="44.6429" height="29.0178" transform="translate(25 38.3569)" fill="#D1CFFF"/>
+<rect width="44.6429" height="4.46428" transform="translate(25 38.3569)" fill="#1E1E1E"/>
+<ellipse cx="27.2321" cy="40.589" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<ellipse cx="29.0177" cy="40.589" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<ellipse cx="30.8034" cy="40.589" rx="0.446429" ry="0.446428" fill="#D1CFFF"/>
+<line x1="26.7856" y1="49.0711" x2="49.9999" y2="49.0712" stroke="#353395" stroke-width="0.892856"/>
+<line x1="26.7856" y1="51.7499" x2="67.8571" y2="51.7499" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="46.4282" y1="54.4286" x2="67.8568" y2="54.4286" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="26.7856" y1="54.4286" x2="43.7499" y2="54.4286" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="26.7856" y1="57.1068" x2="67.8571" y2="57.1068" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="26.7856" y1="59.7855" x2="46.4285" y2="59.7855" stroke="#1E1E1E" stroke-width="0.892856"/>
+<line x1="50" y1="59.7855" x2="67.8571" y2="59.7855" stroke="#1E1E1E" stroke-width="0.892856"/>
+</g>
+<defs>
+<clipPath id="clip0_32_2094">
+<rect width="44.6429" height="29.0178" fill="white" transform="translate(30.3574 33)"/>
+</clipPath>
+<clipPath id="clip1_32_2094">
+<rect width="44.6429" height="29.0178" fill="white" transform="translate(25 38.3569)"/>
+</clipPath>
+</defs>
+</svg>

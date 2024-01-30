@@ -1,7 +1,8 @@
 import '../../scss/general.scss'
-import './Block.scss';
+import './BlockCourses.scss';
 
-const Block = ({id, name, description, img}) => {
+const BlockCourse = ({id, img, name, description}) => {
+
         return(
             <article className="block" key={id}>
                 <div className="block__img">
@@ -21,4 +22,4 @@ const Block = ({id, name, description, img}) => {
             </article>
         )
 }
-export default Block;
+export default BlockCourse;

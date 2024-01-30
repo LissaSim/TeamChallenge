@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.scss'
 
 import Footer from './layouts/Footer/Footer'
@@ -17,14 +15,14 @@ import Main from './layouts/Main/Main';
 import MainPage from './layouts/MainPage/MainPage';
 import CoursePage from './layouts/CoursePage/CoursePage'
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
       <Header />
       <Main>
-        {/* <MainPage /> */}
-        <CoursePage/>
+         <MainPage />
+        {/*<CoursePage/>*/}
 
       </Main>
       <Footer />

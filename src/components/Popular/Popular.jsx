@@ -1,4 +1,3 @@
-
 import {useEffect, useState} from "react";
 import '../../scss/general.scss';
 import './Popular.scss';
