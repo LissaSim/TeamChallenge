@@ -1,0 +1,39 @@
+.itemCourse {
+    display: flex;
+    gap: 18px;
+
+    &__desc {
+        display: flex;
+        gap: 75px;
+    }
+
+    &__price {
+        color: #1E1E1E;
+        font-feature-settings: 'clig' off, 'liga' off;
+
+        font-family: Bitter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &__text {
+        &>h4 {
+            margin-bottom: 10px;
+            color: #1E1E1E;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Bitter;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            &+p{
+                margin: 10px 0;
+            }
+        }
+    }
+    &__raite{
+        display: flex;
+    }
+}

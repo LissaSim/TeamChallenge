@@ -41,7 +41,7 @@ const CategoryCourses = (props) => {
                     <div className="category__inner">
                         <button
                             className='button button--line'
-                            onClick={loadingNewCourses}>{newCourses ? "Меньше курсів" : "Більше курсів"}</button>
+                            onClick={loadingNewCourses}>{newCourses ? "Меньше статей" : "Більше статей"}</button>
                     </div>
 
 

@@ -1,0 +1,42 @@
+.pagination {
+    justify-content: center;
+    gap: 40px;
+
+    &,
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__list {
+        gap: 20px;
+    }
+
+    &__button {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #D1CFFF;
+        border: none;
+        transition: transform 0.3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    &__link {
+        color: #000;
+        font-family: Bitter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+
+        &.active {
+            color: #353395;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+}

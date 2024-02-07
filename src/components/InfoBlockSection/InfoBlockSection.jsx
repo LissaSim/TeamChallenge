@@ -1,30 +1,31 @@
-
 import React from 'react';
 import './InfoBlockSection.scss';
-import Comment from '../Comment/Comment';
 import InfoBlock from '../infoBlock/InfoBlock';
 import Button from '../Button/Button';
-
-
-
+import {Link} from "react-router-dom";
 
 const InfoBlockSection = (props) => {
+    const courseUrl = props.courseUrl
   
     const button = props.btnName ? <Button content={props.btnName } classStyle='button--line'/> : '';
 
   return (
     <section className = {`infoBlockSection ${props.classWrap}`}>
-        {
+
+      <div className="infoBlockSection__title-block">
+      {
         React.Children.map(props.children,(child,index)=>{
-        
 
                 if(child.type == 'h2'){
                 return child;
                 }
               })
         }
-  
- 
+        {/* here we add link for going to site */}
+          {props.link ? <Link to={courseUrl}>{props.link}</Link>: '' }
+
+      </div>
+
       <div className="infoBlockSection__wrap">
       {
         React.Children.map(props.children,(child,index)=>{
@@ -39,16 +40,10 @@ const InfoBlockSection = (props) => {
                 }
               })
         }
-      {/* <InfoBlock>
-      <Comment/>
-      </InfoBlock> */}
 
- 
 
       </div>
-      {button}
-
-     
+        {button}
     </section>
   )
 }
