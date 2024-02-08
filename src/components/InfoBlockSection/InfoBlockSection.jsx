@@ -1,8 +1,7 @@
 
 import React from 'react';
 import './InfoBlockSection.scss';
-import Comment from '../Comment/Comment';
-import InfoBlock from '../InfoBlock/InfoBlock';
+import InfoBlock from "../InfoBlock/InfoBlock.jsx";
 import Button from '../Button/Button';
 
 
