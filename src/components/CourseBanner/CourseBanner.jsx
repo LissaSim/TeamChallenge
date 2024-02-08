@@ -1,4 +1,4 @@
-import './courseBanner.scss';
+import './СourseBanner.scss';
 import Stars from '../Stars/Stars';
 import Button from '../Button/Button';
 import certificate from '../../assets/img/certificate.svg';

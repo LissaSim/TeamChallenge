@@ -1,6 +1,6 @@
 import React from 'react';
 import './InfoBlockSection.scss';
-import InfoBlock from '../infoBlock/InfoBlock';
+import InfoBlock from '../InfoBlock/InfoBlock';
 import Button from '../Button/Button';
 import {Link} from "react-router-dom";
 
