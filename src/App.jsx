@@ -17,7 +17,8 @@ import Main from './layouts/Main/Main';
 //pages
 import MainPage from './layouts/MainPage/MainPage';
 import CoursePage from './layouts/CoursePage/CoursePage'
-import { ListCoursePage } from './layouts/ListCoursePage/ListCoursePage'
+import ListCoursePage  from './layouts/ListCoursePage/ListCoursePage'
+import ListArticles from './layouts/ListArticles/ListArticles'
 function App() {
   const [count, setCount] = useState(0);
 
@@ -33,7 +34,11 @@ function App() {
     {
       path: '/ListCoursePage' ,
       element: <ListCoursePage/>
-    },
+    }, 
+    {
+      path: '/ListArticles' ,
+      element: <ListArticles/>
+    }
 
 
   ])
