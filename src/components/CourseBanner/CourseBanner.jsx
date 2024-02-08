@@ -2,6 +2,9 @@ import './courseBanner.scss';
 import Stars from '../Stars/Stars';
 import Button from '../Button/Button';
 import { useState } from 'react';
+import certificate from '../../assets/img/certificate.svg';
+import beginner from '../../assets/img/beginner.svg';
+import Label from '../Label/Label';
 
 import img from './img.png';
 
@@ -15,9 +18,14 @@ const {btnName} = props;
                         <h1 className="title-block">Javascript for Beginners</h1>
                         <p>Вивчіть javascript онлайн і покращіть свій веб-дизайн за допомогою цього навчального курсу Javascript для початківців.</p>
                         <div className="courseBanner__raite">
+                            <span>4.6</span>
                             <Stars />
                             <span>(2,620 ratings)</span>
                         </div>
+                    </div>
+                    <div className="courseBanner__labels">
+                        <Label img = {certificate} text ='Сертифікат' /> 
+                         <Label img = {beginner} text ='Beginner' />
                     </div>
                     <div className="courseBanner__block">
 
