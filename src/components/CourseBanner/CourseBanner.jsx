@@ -1,4 +1,4 @@
-//import './courseBanner.scss';
+import './courseBanner.scss';
 import Stars from '../Stars/Stars';
 import Button from '../Button/Button';
 import { useState } from 'react';
