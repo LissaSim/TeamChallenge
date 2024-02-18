@@ -2,52 +2,106 @@ import Description from '../../components/Description/Description'
 import CourseBanner from '../../components/CourseBanner/CourseBanner'
 import InfoBlockSection from '../../components/InfoBlockSection/InfoBlockSection'
 import Comment from '../../components/Comment/Comment'
-import Button from '../../components/Button/Button'
 import InfoCard from '../../components/InfoCard/InfoCard'
+import {useEffect, useState} from "react";
+import * as imports from "../../components/imports/importsCoursePage.js";
+import useUdemyService from "../../components/Services/UdemyService.js";
+import {Link, useParams} from "react-router-dom";
+import Spinner from "../../components/Spinner/Spinner.jsx";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 
 const content = {
-    title: 'Опис курсу',
-    content:
-        'Пройдіть цей навчальний курс Javascript і почніть вивчати Javascript сьогодні.Мені як діловій людині не місце в програмуванні.Десять років тому ви могли б уникнути цієї заяви. Сьогодні ви говорите це своїм колегам, і вони глузують з вас, перш ніж повернутися до своїх комп’ютерів, щоб вирішити реальні проблеми та виконати реальну роботу.Якщо ви хочете зробити щось корисне, почніть із вивчення Javascript. У наші дні, коли браузер займає центральне місце в будь-якому використанні комп’ютера, знання «мови браузера» є найважливішим кроком. Кілька років тому потенціал Javascript був невизначеним, і багато програмістів вважали його марним. Однак сьогодні компетентні програмісти визначили реальний потенціал і використання Javascript, і він перетворився з мови іграшок на основну мову браузера. Вона стала однією з найкорисніших мов нашої епохи. Кожен розробник потребує хоча б базового розуміння Javascript. Розробник, який знає Javascript, є рок-зіркою компанії і користується постійним попитом у роботодавців. Наш онлайн-курс Javascript допоможе вам почати, навчаючи всіх основних аспектів кодування в Javascript. Отже... що це буде? Бажаєте розвивати свою кар’єру та мати постійний попит у роботодавців? Хочете навчитися створювати динамічні та інноваційні документи Javascript? Почніть програмувати сьогодні з нашого курсу Javascript для початківців і візьміть під контроль свою кар’єру. Бонус: коли ви зареєструєтесь на цей курс, ви отримаєте доступ до моєї абсолютно нової книги, JavaScript Development Workbook. Ця книга дасть вам ще більше практики кодування на JavaScript!',
+    title: 'Опис курсу'
 }
 
 const CoursePage = () => {
+    const [data, setData] = useState({});
+    const [lectures, setLectures] = useState([]);
+    const [reviews, setReviews] = useState([]);
+    const {id} = useParams();
+
+    const {loading, error, getCourseById, getLectures, getReviews} = useUdemyService();
+
+    useEffect(() => {
+        const fetchData = async () => {
+                const courseData = await getCourseById(id);
+                onDataLoaded(courseData);
+
+                const lecturesData = await getLectures(id);
+                onLecturesLoaded(lecturesData);
+
+                const reviewsData = await getReviews(id);
+                onReviewsLoaded(reviewsData);
+        };
+
+        fetchData();
+    }, [id]);
+
+
+    const onDataLoaded = (newData) => (setData(newData));
+    const onLecturesLoaded = (newLectures) => (setLectures(newLectures));
+    const onReviewsLoaded = (newReviews) => (setReviews(newReviews));
+
+    const renderLectures = (arr) => {
+        return arr.map((lecture, index) => (
+            <p key={index}>{lecture.title}</p>
+        ))
+    }
+
+    const renderReviews = (arr) => {
+        return arr.map((review, index) => (
+            <Comment
+                key={index}
+                author={review.author}
+                content={review.content}/>
+        ))
+    };
+
+    const lecturesList = renderLectures(lectures);
+    const reviewsList = renderReviews(reviews);
+    const errorMessage = error ? <ErrorMessage/> : null;
+    const loadingItem = loading ? <Spinner/> : null;
+    const contentItem =
+        <div className="container">
+        <CourseBanner btnName="Перейти до курсу"
+                      title={data.title}
+                      raiting={data.avgRate}
+                      hasCertificate={data.hasCertificate}
+                      level={data.courseLevel}
+                      price={data.price}
+                      discount={data.discountPrice}
+                      img={data.img}
+                      courseUrl={data.courseUrl}
+                      headline={data.headline}/>
+        <InfoBlockSection classWrap="row comments line">
+            <InfoCard students={data.enrolledStudents} titleS={"Студентів"} iconStudents={imports.iconStudents}/>
+            <InfoCard language={data.locale} titleL={"Мова"} iconLanguage={imports.iconLanguage}/>
+            <InfoCard duration={data.lecturesDuration} titleD={"Відео-уроків"} iconYoutube={imports.iconYouTube}/>
+            <InfoCard tests={data.quizzesAmount} titleT={"Тестів"} iconTests={imports.iconTests}/>
+        </InfoBlockSection>
+        <Description title={content.title} content={data.description}/>
+        <Description
+            title="Вимоги"
+            content={data.requirements}
+        />
+
+        <Link to={data.courseUrl}>
+            <InfoBlockSection classWrap="column comments line" btnName="Більше розділів">
+                <h2 className="title-block">Зміст курсу</h2>
+                {lecturesList}
+            </InfoBlockSection>
+        </Link>
+        <InfoBlockSection classWrap="row comments line" link='See all' courseUrl={data.courseUrl}>
+            <h2 className="title-block">Відгуки</h2>
+            {reviewsList}
+        </InfoBlockSection>
+    </div>
+
     return (
         <>
-            <div className="container">
-                <CourseBanner btnName="Більше розділів" />
-                <InfoBlockSection classWrap="row comments line">
-                    <InfoCard />
-                    <InfoCard />
-                    <InfoCard />
-                    <InfoCard />
-                </InfoBlockSection>
-                <Description title={content.title} content={content.content} />
-                <Description
-                    title="Вимоги"
-                    content="Для цього курсу необхідні деякі базові знання HTML."
-                />
-
-                <InfoBlockSection classWrap="column comments line" btnName="Перейти до курсу">
-                    <h2 className="title-block">Зміст курсу</h2>
-
-                    <p>Привіт, Javascript! </p>
-                    <p>Зберігання інформації у змінних</p>
-                    <p>Умовні оператори</p>
-                    <p>Діалогові вікна </p>
-                    <p>Тепер ми повторюємо! Цикли в Javascript</p>
-                    <p>Кодування функцій Javascript</p>
-                    <p>Робота з масивами</p>
-                    <p>Об'єкт String</p>
-                 
-                </InfoBlockSection>
-                <InfoBlockSection classWrap="row comments line" link='See all'>
-                    <h2 className="title-block">Відгуки</h2>
-                    <Comment />
-                    <Comment />
-                    <Comment />
-                </InfoBlockSection>
-            </div>
+            {loadingItem}
+            {contentItem}
+            {errorMessage}
         </>
     )
 }

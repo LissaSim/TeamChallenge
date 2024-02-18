@@ -6,7 +6,8 @@ import Articles from '../../components/Articles/Articles';
 import CategoryArticles from '../../components/CategoryArticles/CategoryArticles';
 import CategoryCourses from "../../components/CategoryCourses/CategoryCourses.jsx";
 
-const MainPage=()=>{
+const MainPage = () => {
+
 return(
     <>
     <Banner/>

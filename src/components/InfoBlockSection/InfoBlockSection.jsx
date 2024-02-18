@@ -4,6 +4,9 @@ import './InfoBlockSection.scss';
 import InfoBlock from "../InfoBlock/InfoBlock";
 import Button from '../Button/Button';
 
+
+
+
 const InfoBlockSection = (props) => {
 
     const button = props.btnName ? <Button content={props.btnName } classStyle='button--line'/> : '';

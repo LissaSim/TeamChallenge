@@ -2,33 +2,29 @@ import {useEffect, useState} from "react";
 import '../../scss/general.scss';
 import './Popular.scss';
 import Card from '../Card/Card';
-import UdemyService from "../Services/UdemyService.js";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import Spinner from "../Spinner/Spinner.jsx";
+import {Link} from "react-router-dom";
+import useUdemyService from "../Services/UdemyService.js";
 
 const Popular = () => {
     const [popularCourses, setPopularCourses] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
     const [offset, setOffset] = useState(0);
     const [leftButton,setLeftButton] = useState(false)
 
-   const udemyService = new UdemyService();
+    const {loading, error, getPopularCourses} = useUdemyService()
 
     useEffect(() => {
         loadCourses()
     }, [offset]);
 
    const loadCourses = () => {
-       udemyService
-            .getPopularCourses(offset)
+            getPopularCourses(offset)
             .then(onLoaded)
-            .catch(onError);
     };
 
     const onLoaded = (newCourses) => {
         setPopularCourses(newCourses);
-        setLoading(false);
         setLeftButton(leftButton => offset > 0)
     }
 
@@ -40,25 +36,15 @@ const Popular = () => {
         setOffset(prevOffset => Math.max(0, prevOffset - 5));
     };
 
-    useEffect(() => {
-        loadCourses();
-    }, [offset]);
-
-
-    const onError = () => {
-        setError(true);
-        setLoading(false)
-    };
-
    const renderContent = (arr) => {
         return arr.map((course) => (
-            <Card
+            <Link to={`course/${course.id}`} key={course.id}><Card
                 key={course.id}
                 title={course.title}
                 price={course.price}
                 rating={course.avgRate}
                 img={course.img}
-            />
+            /></Link>
         ));
     };
 

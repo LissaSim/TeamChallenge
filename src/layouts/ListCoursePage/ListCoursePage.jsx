@@ -16,8 +16,6 @@ export const ListCoursePage = () => {
                         <ItemCourse />
                         <ItemCourse />
                         <ItemCourse />
-
-
                     </div>
                 </div>
                 <Pagination/>
