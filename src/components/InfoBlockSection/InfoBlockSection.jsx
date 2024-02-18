@@ -1,50 +1,61 @@
+
 import React from 'react';
 import './InfoBlockSection.scss';
-import InfoBlock from '../InfoBlock/InfoBlock';
+import InfoBlock from "../InfoBlock/InfoBlock";
 import Button from '../Button/Button';
-import {Link} from "react-router-dom";
+
+
+
 
 const InfoBlockSection = (props) => {
-    const courseUrl = props.courseUrl
-  
+
     const button = props.btnName ? <Button content={props.btnName } classStyle='button--line'/> : '';
 
-  return (
-    <section className = {`infoBlockSection ${props.classWrap}`}>
+    return (
+        <section className = {`infoBlockSection ${props.classWrap}`}>
 
-      <div className="infoBlockSection__title-block">
-      {
-        React.Children.map(props.children,(child,index)=>{
+            <div className="infoBlockSection__title-block">
+                {
+                    React.Children.map(props.children,(child,index)=>{
 
-                if(child.type == 'h2'){
-                return child;
+
+                        if(child.type == 'h2'){
+                            return child;
+                        }
+                    })
                 }
-              })
-        }
-        {/* here we add link for going to site */}
-          {props.link ? <Link to={courseUrl}>{props.link}</Link>: '' }
+                {/* here we add link for going to site */}
+                {props.link ? <a href="#">{props.link}</a> : '' }
 
-      </div>
+            </div>
 
-      <div className="infoBlockSection__wrap">
-      {
-        React.Children.map(props.children,(child,index)=>{
 
-                if(child.type !== 'h2' || child.type == 'button' ){
-                return (
-                    <InfoBlock>
-                 {child}
-                     </InfoBlock>
-                )
-           
+
+            <div className="infoBlockSection__wrap">
+                {
+                    React.Children.map(props.children,(child,index)=>{
+
+                        if(child.type !== 'h2' || child.type == 'button' ){
+                            return (
+                                <InfoBlock>
+                                    {child}
+                                </InfoBlock>
+                            )
+
+                        }
+                    })
                 }
-              })
-        }
+                {/* <InfoBlock>
+      <Comment/>
+      </InfoBlock> */}
 
 
-      </div>
-        {button}
-    </section>
-  )
+
+            </div>
+            {button}
+
+
+        </section>
+    )
 }
 export default InfoBlockSection

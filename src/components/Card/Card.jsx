@@ -1,4 +1,3 @@
-
 import "../../scss/general.scss";
 import "./Card.scss";
 import Stars from "../Stars/Stars";

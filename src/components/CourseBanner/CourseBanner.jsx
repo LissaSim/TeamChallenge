@@ -1,11 +1,9 @@
-import './СourseBanner.scss';
+import './CourseBanner.scss';
 import Stars from '../Stars/Stars';
 import Button from '../Button/Button';
 import certificate from '../../assets/img/certificate.svg';
 import beginner from '../../assets/img/beginner.svg';
 import Label from '../Label/Label';
-
-import img from './img.png';
 import {Link} from "react-router-dom";
 
 const CourseBanner = ({btnName, title, raiting, hasCertificate, img, price, level, discount, courseUrl, headline}) => {

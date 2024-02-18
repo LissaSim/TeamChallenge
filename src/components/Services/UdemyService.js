@@ -1,19 +1,11 @@
 import {useHttp} from "../../hooks/http.hook.js";
+
+
 const useUdemyService  = () => {
     const {loading, request, error, clearError} = useHttp();
 
-   // const getResource = async (url) => {
-   //      let res = await fetch(url);
-   //
-   //      if (!res.ok) {
-   //          throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-   //      }
-   //
-   //      return await res.json();
-   //  };
-
    const getPopularCourses = async (offset) => {
-        const res = await request( "http://localhost:8080/fs2s/roadmaps/courses-info/hot")
+        const res = await request( `${import.meta.env.VITE_base_Url}hot`)
 
        let resArray =  Object.entries(res).map(([id,item]) => ({
             id: item.id,
@@ -31,7 +23,7 @@ const useUdemyService  = () => {
     };
 
    const getCourseById = async (id) => {
-        const res = await request(`http://localhost:8080/fs2s/roadmaps/courses-info/${id}`)
+        const res = await request(`${import.meta.env.VITE_base_Url + id}`)
 
         const resObj = {
             id: res.id,
@@ -57,7 +49,7 @@ const useUdemyService  = () => {
     }
 
    const getLectures = async (id) => {
-        const res = await request(`http://localhost:8080/fs2s/roadmaps/courses-info/${id}/lectures`)
+        const res = await request(`${import.meta.env.VITE_base_Url + id}/lectures`)
         const lectures = res.map((item) => ({
             title: item.title,
             created: item.created,
@@ -68,7 +60,7 @@ const useUdemyService  = () => {
     }
 
    const getReviews = async (id) => {
-        const res = await request(`http://localhost:8080/fs2s/roadmaps/courses-info/${id}/reviews`)
+        const res = await request(`${import.meta.env.VITE_base_Url + id}/reviews`)
         const reviews = res.map((item) => ({
             rate: item.rate,
             content: item.content,
@@ -79,6 +71,5 @@ const useUdemyService  = () => {
     }
     return {loading, error, getPopularCourses, getCourseById, clearError, getLectures, getReviews}
 }
-
 export default useUdemyService;
 
