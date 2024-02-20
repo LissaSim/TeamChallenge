@@ -6,7 +6,7 @@ function Button({classStyle,content}) {
  
 
     return (
-       < button  className = {style}>
+       < button className = {style} >
           {content}
         </button>
     )

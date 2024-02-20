@@ -4,15 +4,17 @@ import Popular from '../../components/Popular/Popular';
 import Articles from '../../components/Articles/Articles';
 
 import CategoryArticles from '../../components/CategoryArticles/CategoryArticles';
+import CategoryCourses from "../../components/CategoryCourses/CategoryCourses.jsx";
 
-const MainPage=()=>{
+const MainPage = () => {
+
 return(
     <>
     <Banner/>
     <Popular />
-        <CategoryArticles title="Категорії курсів" btnName="Більше курсів"/>
+        <CategoryArticles title="Категорії курсів"/>
         <Articles/>
-        <CategoryArticles title="Категорії статей" btnName="Більше статей"/>
+        <CategoryCourses title="Категорії статей" btnName="Більше статей"/>
 
     </>
 )

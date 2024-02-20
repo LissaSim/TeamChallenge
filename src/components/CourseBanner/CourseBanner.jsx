@@ -1,41 +1,41 @@
-import './courseBanner.scss';
+import './CourseBanner.scss';
 import Stars from '../Stars/Stars';
 import Button from '../Button/Button';
-import { useState } from 'react';
 import certificate from '../../assets/img/certificate.svg';
 import beginner from '../../assets/img/beginner.svg';
 import Label from '../Label/Label';
+import {Link} from "react-router-dom";
 
-import img from './img.png';
+const CourseBanner = ({btnName, title, raiting, hasCertificate, img, price, level, discount, courseUrl, headline}) => {
+    const getCertificate = hasCertificate ? <Label img = {certificate} text ='Сертифікат' /> : null;
+    const forBeginners = level === "Beginner Level" || "All Levels" ?  <Label img = {beginner} text ='Beginner' /> :  <Label img = {beginner} text ='Advanced' />
 
-const CourseBanner = (props) => {
-const {btnName} = props;
     return (
         <section className="courseBanner">
             <div className="courseBanner__wrap">
                 <div className="courseBanner__inner">
                     <div className="courseBanner__block">
-                        <h1 className="title-block">Javascript for Beginners</h1>
-                        <p>Вивчіть javascript онлайн і покращіть свій веб-дизайн за допомогою цього навчального курсу Javascript для початківців.</p>
+                        <h1 className="title-block">{title}</h1>
+                        <p>{headline}</p>
                         <div className="courseBanner__raite">
-                            <span>4.6</span>
+                            <span>{raiting}</span>
                             <Stars />
                             <span>(2,620 ratings)</span>
                         </div>
                     </div>
                     <div className="courseBanner__labels">
-                        <Label img = {certificate} text ='Сертифікат' /> 
-                         <Label img = {beginner} text ='Beginner' />
+                        {getCertificate}
+                        {forBeginners}
                     </div>
                     <div className="courseBanner__block">
 
                         <div className="courseBanner__cost">
                             <span className="courseBanner__cost-sale">
-                                $11,99
+                                {discount}
                             </span>
-                            <span className="courseBanner__cost-full">$69,99 </span>
+                            <span className="courseBanner__cost-full">{price} </span>
                         </div>
-                        <Button  content={btnName} classStyle='button--full'/> 
+                       <Link to={`${courseUrl}`}> <Button  content={btnName} classStyle='button--full'/> </Link>
 
                     </div>
 

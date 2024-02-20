@@ -1,42 +1,83 @@
+import { useState } from 'react';
 import '../../scss/general.scss';
 import './Articles.scss';
-import Card from '../Card/Card';
-// import arrowRight from '../../images/arrow-right.svg';
-// import arrowLeft from '../../images/arrow-left.svg';
+import CardPopularArticles from '../CardPopularArticles/CardPopularArticles.jsx';
+import popularArticles from '../Data/PopularArticles.jsx';
 
 function Articles() {
+    let initial = popularArticles.slice(0,3);
+    let newArticles = popularArticles.slice(3,4)
+    const [currentItems, setCurrentItems] = useState(initial);
+    const [leftActive, setLeftActive] = useState(false);
+    const [rightActive, setRightActive] = useState(true)
+
+    const showNewItems = () => {
+        setCurrentItems(newArticles);
+        setRightActive(false);
+        setLeftActive(true);
+    };
+
+    const resetItems = () => {
+        setCurrentItems(initial);
+        setRightActive(true);
+        setLeftActive(false)
+    };
+
+    const renderContent = (arr) => {
+        return arr.map((item) => (
+            <CardPopularArticles
+            key= {item.id}
+            name={item.name}
+            img={item.img}
+            description={item.description}/>
+        ))
+    }
+
+    const content = renderContent(initial)
+
     return (
         <section className="articles">
             <div className="container">
                 <div className="line">
-                    <h2 className="title-block">Популярні курси Udemy</h2>
+                    <h2 className="title-block">Популярні статті Udemy</h2>
                     <div className="articles__wrap">
-                        <button className='articles__nav articles__nav--left'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-                                <path d="M6 1L1 6L6 11" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <button
+                            className={`articles__nav articles__nav--left ${leftActive ? 'active' : ''}`}
+                            onClick={resetItems}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+                                <path
+                                    d="M6 1L1 6L6 11"
+                                    stroke="black"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
                             </svg>
                         </button>
-                        <button className='articles__nav articles__nav--right active'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-                                <path d="M1 1L6 6L1 11" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <button
+                            className={`articles__nav articles__nav--right ${rightActive ? 'active': ''}`}
+                            onClick={showNewItems}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+                                <path
+                                    d="M1 1L6 6L1 11"
+                                    stroke="black"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
                             </svg>
                         </button>
                         <div className="articles__track">
-                            <Card />
-                            <Card />
-                            <Card />
+                            {content}
                         </div>
-
-
                     </div>
                 </div>
-
-
             </div>
-
-
         </section>
-    )
-};
-export default Articles;
+    );
 
+}
+
+export default Articles;

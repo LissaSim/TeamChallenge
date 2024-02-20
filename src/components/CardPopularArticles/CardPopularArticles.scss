@@ -1,0 +1,56 @@
+.card {
+  transition: transform 0.3s linear;
+  &:hover{
+    transform: scale(1.02);
+    color: #353395;
+
+  }
+  &__body {
+    &-desc {
+      margin-bottom: 9px;
+
+      &>h4 {
+        font-family: 'Bitter', serif;
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 116%;
+        transition: color 0.3s linear;
+      }
+    }
+  }
+
+  &__img {
+    margin-bottom: 10px;
+
+    & img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 9px;
+    font-size: 1em;
+    font-weight: 400;
+    color:#1E1E1E;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+
+    & p{
+      font-size: 14px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: 1em;
+      transition: color 0.3s linear;
+    }
+  }
+}
