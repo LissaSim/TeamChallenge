@@ -9,8 +9,9 @@ import Error from './layouts/Error/Error'
 //pages
 import MainPage from './layouts/MainPage/MainPage';
 import CoursePage from './layouts/CoursePage/CoursePage'
-import { ListCoursePage } from './layouts/ListCoursePage/ListCoursePage';
+import ListCoursePage  from './layouts/ListCoursePage/ListCoursePage';
 import InfoBlockSection from "./components/InfoBlockSection/InfoBlockSection.jsx";
+import ListArticles from './layouts/ListArticles/ListArticles'
 
 function App() {
     return (
