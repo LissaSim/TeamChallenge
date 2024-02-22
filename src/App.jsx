@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import './App.scss'
+import './scss/general.scss'
 
 import Footer from './layouts/Footer/Footer'
 import Header from './layouts/Header/Header'
@@ -9,8 +10,9 @@ import Error from './layouts/Error/Error'
 //pages
 import MainPage from './layouts/MainPage/MainPage';
 import CoursePage from './layouts/CoursePage/CoursePage'
-import { ListCoursePage } from './layouts/ListCoursePage/ListCoursePage';
+import ListCoursePage  from './layouts/ListCoursePage/ListCoursePage';
 import InfoBlockSection from "./components/InfoBlockSection/InfoBlockSection.jsx";
+import ListArticles from './layouts/ListArticles/ListArticles'
 
 function App() {
     return (
@@ -26,6 +28,7 @@ function App() {
                         <Route path="/courseList/:page" element={<ListCoursePage/>}/>
                         <Route path="https://www.udemy.com/:url" element={<InfoBlockSection/>}/>
                         <Route path="/undefined" element={<Error/>}/>
+                        <Route path="/article" element={<ListArticles/>}/>
                     </Routes>
                 </Main>
                 <Footer />

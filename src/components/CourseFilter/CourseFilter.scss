@@ -1,0 +1,38 @@
+.courseFilter {
+    &__title {
+  
+        padding: 0;
+        color: #5D59FF;
+        font-family: Bitter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+    }
+
+    &__block {
+        border: none;
+        border-bottom: 1px solid #A17CFC;
+        padding: 0 0 20px;
+        margin: 20px 0 0 ;
+    } 
+    &__input{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      accent-color: #5D59FF;
+      &:not(:last-child){
+        margin-bottom: 10px;
+      }
+      & label {
+        & img{
+            margin-left: 5px;
+        }
+      }
+    }
+ 
+
+}

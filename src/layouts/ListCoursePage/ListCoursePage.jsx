@@ -1,4 +1,3 @@
-
 import './ListCoursePage.scss';
 import { ItemCourse } from '../../components/ItemCourse/ItemCourse';
 import Pagination from '../../components/Pagination/Pagination';
