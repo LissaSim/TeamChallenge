@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import './App.scss'
+import './scss/general.scss'
 
 import Footer from './layouts/Footer/Footer'
 import Header from './layouts/Header/Header'
@@ -25,6 +26,7 @@ function App() {
                         <Route path="https://www.udemy.com/:url" element={<CoursePage/>}/>
                         <Route path="/courseList" element={<ListCoursePage/>}/>
                         <Route path="https://www.udemy.com/:url" element={<InfoBlockSection/>}/>
+                        <Route path="/article" element={<ListArticles/>}/>
                         <Route path="/error" element={<Error/>}/>
                     </Routes>
                 </Main>
