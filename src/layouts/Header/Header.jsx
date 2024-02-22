@@ -1,30 +1,36 @@
 import '../../scss/general.scss'
 import './Header.scss'
 import logo from '../../images/FS2S-head.svg'
-// import heart from '../../images/heart.svg'
+
 import arrow from '../../images/arrow.svg'
 import search from '../../images/search.svg'
 import Button from '../../components/Button/Button';
 import {Link} from "react-router-dom";
+import {useState} from "react";
 function Header() {
+  const [isCourseListVisible, setIsCourseListVisible] = useState(false);
+
+  const toggleCourseList = () => {
+    setIsCourseListVisible(!isCourseListVisible);
+  };
   return (
-    <header className="header">
-      <div className="container header__container">
-        <div className="header__wrap">
-          <div className="header__logo">
-            <Link to={`/`}>
-              <img src={logo} alt=""/>
-            </Link>
-          </div>
-          <div className="header__search">
-            <img src={search} alt="search" />
+      <header className="header">
+        <div className="container header__container">
+          <div className="header__wrap">
+            <div className="header__logo">
+              <Link to={`/`}>
+                <img src={logo} alt=""/>
+              </Link>
+            </div>
+            <div className="header__search">
+              <img src={search} alt="search" />
             <input
               className="header__search-input"
               type="text"
               placeholder="Пошук "
             />
-            <div className="header__search-list active">
-              <button className="header__list-btn">
+            <div className={`header__search-list ${isCourseListVisible ? 'active' : ''}`} onClick={toggleCourseList}>
+              <button className="header__list-btn" >
                 <span>Курси</span>
                 <img src={arrow} alt="arrow" />
               </button>

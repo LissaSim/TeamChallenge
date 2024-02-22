@@ -53,7 +53,7 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>Backend - Гліб </span>
+                <span>Backend - Гліб Фєтісов</span>
               </li>
               <li>
                 <svg
@@ -83,7 +83,7 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>Frontend - Єлизавета </span>
+                <span>Frontend - Єлизавета Сімутіна</span>
               </li>
               <li>
                 <svg
@@ -128,7 +128,7 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>QA - Ростислав Пархоменко ff</span>
+                <span>QA - Ростислав Пархоменко</span>
               </li>
             </ul>
           </div>

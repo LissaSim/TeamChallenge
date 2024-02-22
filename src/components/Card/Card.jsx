@@ -23,20 +23,12 @@ const Card = (props) => {
                     <div className="card__cost">
             <span>
               {price}
-                <span className="card__cost-sale">sale</span>
+                <span className="card__cost-sale">{price === 'Free' ? null : sale}</span>
             </span>
                         <span>
               <img src={heart} alt="heart" width="24" />
             </span>
                     </div>
-                </div>
-                <div className="card__text">
-                    <p>
-                        Аналітик — це спеціаліст, який розкладає дані на складові, щоб
-                        знайти відповіді на запитання, які хвилюють бізнес. Аналітик — це
-                        спеціаліст, який розкладає дані на складові, щоб знайти відповіді
-                        на запитання, які хвилюють бізнес.
-                    </p>
                 </div>
             </div>
         </article>

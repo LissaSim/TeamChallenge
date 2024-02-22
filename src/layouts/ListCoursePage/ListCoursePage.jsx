@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import useUdemyService from '../../components/Services/UdemyService.js';
 import { useParams } from 'react-router-dom';
 import { usePagination } from '../../hooks/usePagination.js';
-
-export const ListCoursePage = () => {
+import CourseFilter from "../../components/CourseFilter/CourseFilter.jsx";
+ const ListCoursePage = () => {
     const [courseList, setCourseList] = useState([]);
     const { getCourseList, getCourseCount } = useUdemyService();
     const { value } = useParams();
@@ -59,7 +59,7 @@ export const ListCoursePage = () => {
                 <h1 className="title-block">{value}</h1>
                 <div className="listCourse__wrap line">
                     <div className="listCourse__filter">
-                        filter
+                        <CourseFilter/>
                     </div>
                     <div className="listCourse__blocks">
                         {content}
@@ -76,3 +76,5 @@ export const ListCoursePage = () => {
         </>
     );
 };
+
+export default ListCoursePage;
