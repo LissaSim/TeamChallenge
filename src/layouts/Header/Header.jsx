@@ -5,13 +5,16 @@ import logo from '../../images/FS2S-head.svg'
 import arrow from '../../images/arrow.svg'
 import search from '../../images/search.svg'
 import Button from '../../components/Button/Button';
+import {Link} from "react-router-dom";
 function Header() {
   return (
     <header className="header">
       <div className="container header__container">
         <div className="header__wrap">
           <div className="header__logo">
-            <img src={logo} alt="" />
+            <Link to={`/`}>
+              <img src={logo} alt=""/>
+            </Link>
           </div>
           <div className="header__search">
             <img src={search} alt="search" />

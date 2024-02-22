@@ -22,9 +22,10 @@ function App() {
                         <Route path="/" element={<MainPage/>}/>
                         <Route path="/course/:id" element={<CoursePage/>}/>
                         <Route path="https://www.udemy.com/:url" element={<CoursePage/>}/>
-                        <Route path="/courseList" element={<ListCoursePage/>}/>
+                        <Route path="/courseList/:value" element={<ListCoursePage/>}/>
+                        <Route path="/courseList/:page" element={<ListCoursePage/>}/>
                         <Route path="https://www.udemy.com/:url" element={<InfoBlockSection/>}/>
-                        <Route path="/error" element={<Error/>}/>
+                        <Route path="/undefined" element={<Error/>}/>
                     </Routes>
                 </Main>
                 <Footer />

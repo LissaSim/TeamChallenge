@@ -69,7 +69,28 @@ const useUdemyService  = () => {
         }));
         return reviews
     }
-    return {loading, error, getPopularCourses, getCourseById, clearError, getLectures, getReviews}
+
+    const getCourseList = async (value, pages = 1) => {
+       const res = await request(`${import.meta.env.VITE_base_Url}search/${value}?page=${pages}`);
+
+       const courseList = res.courses.map((item) => ({
+           title: item.title,
+           price: item.price,
+           avgRate: parseFloat(item.avgRate).toFixed(1),
+           img: item.imageUrl_240x135
+       }))
+
+        return courseList
+    }
+
+    const getCourseCount = async (value) => {
+        const res = await request(`${import.meta.env.VITE_base_Url}search/${value}`);
+
+        const courseCount = parseFloat(res.dataAmount);
+        return courseCount
+    }
+
+    return {loading, error, getPopularCourses, getCourseById, clearError, getLectures, getReviews, getCourseList, getCourseCount}
 }
 export default useUdemyService;
 

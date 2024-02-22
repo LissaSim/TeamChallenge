@@ -1,20 +1,23 @@
 .block {
-    display: flex;
+    display: block;
     gap: 12px;
     transition: transform 0.3s linear;
 
     &:hover{
         transform: scale(1.02);
         & .block__body-desc{
-            color: #353395;
+            //color: #353395;
+            color: red;
             & h4{
 
-                color: #353395;
+                //color: #353395;
+                color: red;
                
             }
         }
        & .block__text{
-        color: #353395;
+        //color: #353395;
+           color: red
         }
 
     }

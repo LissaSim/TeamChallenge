@@ -4,6 +4,7 @@ import Block from '../Block/Block';
 import '../Button/Button.scss';
 import {useState} from "react";
 import courses from "../Data/Courses.jsx"
+import {Link} from "react-router-dom";
 
 const CategoryArticles = ({title}) => {
     const [newArticles, setNewArticles] = useState(false);
@@ -21,11 +22,13 @@ const CategoryArticles = ({title}) => {
 
     const renderArticles = (arr,next) => {
         return arr.slice(0,next).map((item) => (
-        <Block
+        <Link to={`courseList/${item.value}`} key={item.id} className="block">
+            <Block
             key={item.id}
             name={item.name}
             description={item.description}
             img={item.img}/>
+        </Link>
         ))
     }
 
@@ -41,7 +44,7 @@ const CategoryArticles = ({title}) => {
                 <div className="category__inner">
                     <button
                         className='button button--line'
-                        onClick={loadingNewArticles}>{newArticles ? "Меньше курсів" : "Більше курсів"}</button>
+                        onClick={loadingNewArticles}>{newArticles ? "Менше курсів" : "Більше курсів"}</button>
                 </div>
 
 

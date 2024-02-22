@@ -11,43 +11,50 @@ const courses = [
         img: imgData,
         description: "Процеси збору, обробки та аналiзу даних для отримання важливої інформації",
         name: "Обробка та аналіз даних",
-        id: 1
+        id: 1,
+        value: "Data processing and analysis"
     },
     {
         img: imgKiber,
         description: 'Комплекс процесів, практичних порад і технологічних рішень, які допомагають захищати важливі системи й мережу від кібератак.',
         name: 'Кібербезпека',
-        id: 2
+        id: 2,
+        value: "Cybersecurity"
     },
     {
         img: imgBlock,
         description: 'Створення тривимірних моделей та їх рух через час для створення вражаючих візуальних ефектів у фільмах, іграх та рекламі.',
         name: '3D дизайн',
-        id: 3
+        id: 3,
+        value: "Design"
     },
     {
         img: imgProg,
         description: 'Створення систем, які забеспечують належне функціонування компьютерів',
         name: "Розробка програмного забеспечення",
-        id: 4
+        id: 4,
+        value: "Software development"
     },
     {
         img: imgMob,
         description: 'Розробка програм для мобільних платформ',
         name: 'Мобільна розробка',
-        id: 5
+        id: 5,
+        value: "Mobile development"
     },
     {
         img: imgWeb,
         description: 'Стандартна мова розмітки для створення та відображення веб-сторінок у браузері',
         name:'Інтернет та веб-розробка',
-        id: 6
+        id: 6,
+        value: "Internet and web development"
     },
     {
         img: imgPM,
         description: 'Організація і управління ресурсами з метою успешного досягення цілей та завершення завдань проекту',
         name: 'Управління проектами та ресурсами',
-        id: 7
+        id: 7,
+        value: "Project and resource management"
     }
 ]
 
