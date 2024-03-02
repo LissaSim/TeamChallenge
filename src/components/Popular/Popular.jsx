@@ -59,7 +59,7 @@ const Popular = () => {
                     <h2 className="title-block">Популярні курси Udemy</h2>
                     <div className="popular__wrap">
                         <button
-                            className={`popular__nav popular__nav--left ${leftButton ? 'active' : ''}`}
+                            className={`popular__nav popular__nav--left ${leftButton && !error ? 'active' : ''}`}
                             onClick={() => onSlideLeft()}
                         >
                             <svg
@@ -79,7 +79,7 @@ const Popular = () => {
                             </svg>
                         </button>
                         <button
-                            className={`popular__nav popular__nav--right ${!leftButton ? 'active' : ''}`}
+                            className={`popular__nav popular__nav--right ${!leftButton && !error ? 'active' : ''}`}
                             onClick={() => onSlideRight()}
                         >
                             <svg

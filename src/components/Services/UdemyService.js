@@ -74,6 +74,7 @@ const useUdemyService  = () => {
        const res = await request(`${import.meta.env.VITE_base_Url}search/${value}?page=${pages}`);
 
        const courseList = res.courses.map((item) => ({
+           id: item.id,
            title: item.title,
            price: item.price,
            avgRate: parseFloat(item.avgRate).toFixed(1),

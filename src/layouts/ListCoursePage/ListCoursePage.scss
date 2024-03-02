@@ -1,25 +1,33 @@
-.listCourse{
-    &>h1{
-        color:#5D59FF;
-        &::after{
-            background:#5D59FF ;
+
+.listCourse {
+    & > h1 {
+        color: #5D59FF;
+
+        &::after {
+            background: #5D59FF;
         }
     }
-    &__wrap{
+
+    &__wrap {
         display: flex;
-        gap:32px;
+        gap: 32px;
         margin-bottom: 46px;
     }
-    &__filter{
+
+    &__filter {
         flex-basis: 23%;
         flex-shrink: 0;
     }
-    &__blocks{
+
+    &__blocks {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-    &:has(.pagination){
+
+    &:has(.pagination) {
         margin-bottom: 40px;
     }
+
 }
+

@@ -4,7 +4,7 @@ import Block from '../Block/Block';
 import '../Button/Button.scss';
 import {useState} from "react";
 import courses from "../Data/Courses.jsx"
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const CategoryArticles = ({title}) => {
     const [newArticles, setNewArticles] = useState(false);
@@ -22,13 +22,13 @@ const CategoryArticles = ({title}) => {
 
     const renderArticles = (arr,next) => {
         return arr.slice(0,next).map((item) => (
-        <Link to={`courseList/${item.value}`} key={item.id} className="block">
+        <NavLink to={`courseList/${item.value}`} key={item.id} className="block">
             <Block
             key={item.id}
             name={item.name}
             description={item.description}
             img={item.img}/>
-        </Link>
+        </NavLink>
         ))
     }
 

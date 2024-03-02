@@ -3,12 +3,14 @@ import { ItemCourse } from '../../components/ItemCourse/ItemCourse';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import useUdemyService from '../../components/Services/UdemyService.js';
-import { useParams } from 'react-router-dom';
+import {Link, NavLink, useParams} from 'react-router-dom';
 import { usePagination } from '../../hooks/usePagination.js';
 import CourseFilter from "../../components/CourseFilter/CourseFilter.jsx";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
+import Spinner from "../../components/Spinner/Spinner.jsx";
  const ListCoursePage = () => {
     const [courseList, setCourseList] = useState([]);
-    const { getCourseList, getCourseCount } = useUdemyService();
+    const { getCourseList, getCourseCount, error, loading } = useUdemyService();
     const { value } = useParams();
     const [courseCount, setCourseCount] = useState(0);
     const {
@@ -41,17 +43,23 @@ import CourseFilter from "../../components/CourseFilter/CourseFilter.jsx";
 
     const renderContent = (arr) => {
         return arr.map((course) => (
+            <NavLink to={`course/${course.id}`} key={course.id}>
             <ItemCourse
+                id={course.id}
                 key={course.id}
                 title={course.title}
                 price={course.price}
                 avgRate={course.avgRate}
                 img={course.img}
             />
+            </NavLink>
         ));
     };
 
     const content = renderContent(courseList);
+    const errorMessage = error ? <ErrorMessage /> : null;
+    const spinner = loading ? <Spinner /> : null;
+    const filters = !loading && !error ? <CourseFilter/> : null;
 
     return (
         <>
@@ -59,10 +67,12 @@ import CourseFilter from "../../components/CourseFilter/CourseFilter.jsx";
                 <h1 className="title-block">{value}</h1>
                 <div className="listCourse__wrap line">
                     <div className="listCourse__filter">
-                        <CourseFilter/>
+                        {filters}
                     </div>
                     <div className="listCourse__blocks">
                         {content}
+                        {errorMessage}
+                        {spinner}
                     </div>
                 </div>
                 <Pagination

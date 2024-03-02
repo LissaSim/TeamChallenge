@@ -3,25 +3,6 @@
     gap: 12px;
     transition: transform 0.3s linear;
 
-    &:hover{
-        transform: scale(1.02);
-        & .block__body-desc{
-            //color: #353395;
-            color: red;
-            & h4{
-
-                //color: #353395;
-                color: red;
-               
-            }
-        }
-       & .block__text{
-        //color: #353395;
-           color: red
-        }
-
-    }
-
     &__body-desc {
         & h4 {
             margin-bottom: 10px;
@@ -31,10 +12,10 @@
             font-weight: 700;
             line-height: 116.667%;
         }
-    
+
     }
     &__text{
-         font-size: 14px;
+        font-size: 14px;
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 5;
