@@ -3,13 +3,16 @@ import { ItemCourse } from '../../components/ItemCourse/ItemCourse';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import useUdemyService from '../../components/Services/UdemyService.js';
-import {Link, NavLink, useParams} from 'react-router-dom';
+import { NavLink, useParams} from 'react-router-dom';
 import { usePagination } from '../../hooks/usePagination.js';
 import CourseFilter from "../../components/CourseFilter/CourseFilter.jsx";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 import Spinner from "../../components/Spinner/Spinner.jsx";
+
+
  const ListCoursePage = () => {
     const [courseList, setCourseList] = useState([]);
+    const [showContent, setShowContent] = useState(false);
     const { getCourseList, getCourseCount, error, loading } = useUdemyService();
     const { value } = useParams();
     const [courseCount, setCourseCount] = useState(0);
@@ -20,8 +23,8 @@ import Spinner from "../../components/Spinner/Spinner.jsx";
         prevPage,
         setPage,
     } = usePagination({
-        contentPerPage: 5,
-        count: courseCount,
+        contentPerPage: 7,
+        count: courseCount ,
     });
 
     useEffect(() => {
@@ -29,7 +32,8 @@ import Spinner from "../../components/Spinner/Spinner.jsx";
     }, [page, value]);
 
     useEffect(() => {
-        getCourseCount(value).then(setCourseCount);
+        getCourseCount(value)
+            .then(setCourseCount);
     }, [value]);
 
     const loadCourseList = () => {
@@ -39,11 +43,12 @@ import Spinner from "../../components/Spinner/Spinner.jsx";
 
     const onLoaded = (newCourses) => {
         setCourseList(newCourses);
+        setShowContent(true);
     };
 
     const renderContent = (arr) => {
         return arr.map((course) => (
-            <NavLink to={`course/${course.id}`} key={course.id}>
+            <NavLink to={`course/${course.id}`} key={course.id} style={{textDecoration: "none", color: "black"}}>
             <ItemCourse
                 id={course.id}
                 key={course.id}
@@ -56,7 +61,7 @@ import Spinner from "../../components/Spinner/Spinner.jsx";
         ));
     };
 
-    const content = renderContent(courseList);
+    const content = showContent && !loading && !error ? renderContent(courseList) : null;
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading ? <Spinner /> : null;
     const filters = !loading && !error ? <CourseFilter/> : null;
