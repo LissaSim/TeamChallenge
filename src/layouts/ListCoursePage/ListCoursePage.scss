@@ -1,5 +1,6 @@
 
 .listCourse {
+
     & > h1 {
         color: #5D59FF;
 
@@ -10,6 +11,7 @@
 
     &__wrap {
         display: flex;
+        justify-content: center;
         gap: 32px;
         margin-bottom: 46px;
     }

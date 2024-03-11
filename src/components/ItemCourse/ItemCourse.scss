@@ -3,14 +3,17 @@
     gap: 18px;
 
     &__desc {
-        display: flex;
+        display: inline-flex;
         gap: 75px;
     }
 
     &__price {
         text-align: right;
+        justify-content: flex-end;
         font-style: normal;
+        width: 65px;
         line-height: normal;
+
 
         h5 {
             color: #1E1E1E;
@@ -31,8 +34,8 @@
     }
 
     &__text {
-        display: flex;
-        flex-direction: column;
+        width: 450px;
+        text-align: left;
         gap: 10px;
 
         &>h4 {

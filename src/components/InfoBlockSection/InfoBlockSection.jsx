@@ -3,6 +3,7 @@ import React from 'react';
 import './InfoBlockSection.scss';
 import InfoBlock from "../InfoBlock/InfoBlock";
 import Button from '../Button/Button';
+import {Link} from "react-router-dom";
 
 
 
@@ -25,7 +26,7 @@ const InfoBlockSection = (props) => {
                     })
                 }
                 {/* here we add link for going to site */}
-                {props.link ? <a href="#">{props.link}</a> : '' }
+                {props.link ? <Link to={props.courseUrl} >{props.link}</Link> : '' }
 
             </div>
 
