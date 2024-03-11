@@ -10,7 +10,8 @@ import useUdemyService from "../Services/UdemyService.js";
 const Popular = () => {
     const [popularCourses, setPopularCourses] = useState([]);
     const [offset, setOffset] = useState(0);
-    const [leftButton,setLeftButton] = useState(false)
+    const [leftButton,setLeftButton] = useState(false);
+    const [showContent, setShowContent] = useState(false)
 
     const {loading, error, getPopularCourses} = useUdemyService()
 
@@ -21,19 +22,21 @@ const Popular = () => {
    const loadCourses = () => {
             getPopularCourses(offset)
             .then(onLoaded)
-    };
+   };
 
     const onLoaded = (newCourses) => {
         setPopularCourses(newCourses);
-        setLeftButton(leftButton => offset > 0)
+        setLeftButton(leftButton => offset > 0);
+        setShowContent(true)
     }
-
     const onSlideRight = () => {
         setOffset(prevOffset => prevOffset + 5);
+        setShowContent(false)
     };
 
     const onSlideLeft = () => {
         setOffset(prevOffset => Math.max(0, prevOffset - 5));
+        setShowContent(false)
     };
 
    const renderContent = (arr) => {
@@ -48,9 +51,9 @@ const Popular = () => {
         ));
     };
 
-        const content = renderContent(popularCourses);
+        const content = showContent ? renderContent(popularCourses) : null;
         const errorMessage = error ? <ErrorMessage /> : null;
-        const spinner = loading ? <Spinner /> : null;
+        const spinner = loading ? <Spinner />  : null;
 
     return (
         <section className="popular">
@@ -59,7 +62,7 @@ const Popular = () => {
                     <h2 className="title-block">Популярні курси Udemy</h2>
                     <div className="popular__wrap">
                         <button
-                            className={`popular__nav popular__nav--left ${leftButton && !error ? 'active' : ''}`}
+                            className={`popular__nav popular__nav--left ${leftButton && !error && !loading ? 'active' : ''}`}
                             onClick={() => onSlideLeft()}
                         >
                             <svg
@@ -79,7 +82,7 @@ const Popular = () => {
                             </svg>
                         </button>
                         <button
-                            className={`popular__nav popular__nav--right ${!leftButton && !error ? 'active' : ''}`}
+                            className={`popular__nav popular__nav--right ${!leftButton && !error && !loading ? 'active' : ''}`}
                             onClick={() => onSlideRight()}
                         >
                             <svg

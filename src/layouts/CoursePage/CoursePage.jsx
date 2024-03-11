@@ -6,7 +6,7 @@ import InfoCard from '../../components/InfoCard/InfoCard'
 import {useEffect, useState} from "react";
 import * as imports from "../../components/imports/importsCoursePage.js";
 import useUdemyService from "../../components/Services/UdemyService.js";
-import {Link, useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner.jsx";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 
@@ -59,48 +59,52 @@ const CoursePage = () => {
 
     const lecturesList = renderLectures(lectures);
     const reviewsList = renderReviews(reviews);
-    const errorMessage = error ? <ErrorMessage/> : null;
-    const loadingItem = loading ? <Spinner/> : null;
+
     const contentItem =
         <div className="container">
-        <CourseBanner btnName="Перейти до курсу"
-                      title={data.title}
-                      raiting={data.avgRate}
-                      hasCertificate={data.hasCertificate}
-                      level={data.courseLevel}
-                      price={data.price}
-                      discount={data.discountPrice}
-                      img={data.img}
-                      courseUrl={data.courseUrl}
-                      headline={data.headline}/>
-        <InfoBlockSection classWrap="row comments line">
-            <InfoCard students={data.enrolledStudents} titleS={"Студентів"} iconStudents={imports.iconStudents}/>
-            <InfoCard language={data.locale} titleL={"Мова"} iconLanguage={imports.iconLanguage}/>
-            <InfoCard duration={data.lecturesDuration} titleD={"Відео-уроків"} iconYoutube={imports.iconYouTube}/>
-            <InfoCard tests={data.quizzesAmount} titleT={"Тестів"} iconTests={imports.iconTests}/>
-        </InfoBlockSection>
-        <Description title={content.title} content={data.description}/>
-        <Description
-            title="Вимоги"
-            content={data.requirements}
-        />
-
-        <Link to={data.courseUrl}>
-            <InfoBlockSection classWrap="column comments line" btnName="Більше розділів">
-                <h2 className="title-block">Зміст курсу</h2>
-                {lecturesList}
+            <CourseBanner btnName="Перейти до курсу"
+                          title={data.title}
+                          raiting={data.avgRate}
+                          hasCertificate={data.hasCertificate}
+                          level={data.courseLevel}
+                          price={data.price}
+                          discount={data.discountPrice}
+                          img={data.img}
+                          courseUrl={data.courseUrl}
+                          headline={data.headline}/>
+            <InfoBlockSection classWrap="row comments line">
+                <InfoCard students={data.enrolledStudents} titleS={"Студентів"} iconStudents={imports.iconStudents}/>
+                <InfoCard language={data.locale} titleL={"Мова"} iconLanguage={imports.iconLanguage}/>
+                <InfoCard duration={data.lecturesDuration} titleD={"Відео-уроків"} iconYoutube={imports.iconYouTube}/>
+                <InfoCard tests={data.quizzesAmount} titleT={"Тестів"} iconTests={imports.iconTests}/>
             </InfoBlockSection>
-        </Link>
-        <InfoBlockSection classWrap="row comments line" link='See all' courseUrl={data.courseUrl}>
-            <h2 className="title-block">Відгуки</h2>
-            {reviewsList}
-        </InfoBlockSection>
-    </div>
+            <Description title={content.title} content={data.description}/>
+            <Description
+                title="Вимоги"
+                content={data.requirements}
+            />
+
+            <NavLink to={data.courseUrl} style={{textDecoration: "none", color: "black"}}>
+                <InfoBlockSection classWrap="column comments line" btnName="Більше розділів">
+                    <h2 className="title-block">Зміст курсу</h2>
+                    {lecturesList}
+                </InfoBlockSection>
+            </NavLink>
+
+            <InfoBlockSection classWrap="row comments line" link='See all' courseUrl={data.courseUrl}>
+                <h2 className="title-block">Відгуки</h2>
+                {reviewsList}
+            </InfoBlockSection>
+        </div>
+
+    const errorMessage = error ? <ErrorMessage/> : null;
+    const loadingItem = loading ? <Spinner/> : null;
+    const contentPage = !loading ? contentItem : null;
 
     return (
         <>
             {loadingItem}
-            {contentItem}
+            {contentPage}
             {errorMessage}
         </>
     )
