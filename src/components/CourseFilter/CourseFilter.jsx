@@ -18,40 +18,44 @@ const CourseFilter = (props) => {
           <legend className="courseFilter__title">Рейтинг</legend>
 
           <div className="courseFilter__input">
-            <input type="radio" id="more" name="more" />
+            {/*<input type="radio" id="more" name="more" />*/}
+            <input type="radio" id="more" name="more"/>
             <label for="more">
-              <span>4,5 і більше</span> <img src={star5} />
+              <span>4,5 і більше</span> <img src={star5}/>
             </label>
           </div>
 
           <div className="courseFilter__input">
-            <input type="radio" id="middle" name="middle" />
+            {/*<input type="radio" id="middle" name="middle" />*/}
+            <input type="radio" id="middle" name="more"/>
             <label for="middle">
-              <span> 4,0 і більше </span> <img src={star4} />
+              <span> 4,0 і більше </span> <img src={star4}/>
             </label>
           </div>
           <div className="courseFilter__input">
-            <input type="radio" id="adequete" name="adequete" />
+            {/*<input type="radio" id="adequete" name="adequete" />*/}
+            <input type="radio" id="adequete" name="more"/>
             <label for="adequete">
               <span>3,5 і більше</span>
-              <img src={star35} />
+              <img src={star35}/>
             </label>
           </div>
           <div className="courseFilter__input">
-            <input type="radio" id="less" name="less" />
+            {/*<input type="radio" id="less" name="less" />*/}
+            <input type="radio" id="less" name="more"/>
             <label for="less">
               <span>3,0 і більше</span>
-              <img src={star3} />
+              <img src={star3}/>
             </label>
           </div>
         </fieldset>
       </li>
       <li>
-        <fieldset className="courseFilter__block">
+      <fieldset className="courseFilter__block">
           <legend className="courseFilter__title">Вартість</legend>
-
+          {/*checked*/}
           <div className="courseFilter__input">
-            <input type="checkbox" id="scales" name="scales" checked />
+            <input type="checkbox" id="scales" name="scales"  />
             <label for="scales">Безкоштовний</label>
           </div>
 
@@ -86,7 +90,7 @@ const CourseFilter = (props) => {
           <legend className="courseFilter__title">Сортування</legend>
 
           <div className="courseFilter__input">
-            <input type="radio" id="scales" name="scales" />
+            <input type="radio" id="scales" name="horns" />
             <label for="scales">Найбільш популярний</label>
           </div>
 
@@ -105,7 +109,7 @@ const CourseFilter = (props) => {
           <legend className="courseFilter__title">Рівень</legend>
 
           <div className="courseFilter__input">
-            <input type="checkbox" id="scales" name="scales" checked />
+            <input type="checkbox" id="scales" name="scales" />
             <label for="scales">Всі рівні (All Levels)</label>
           </div>
 
@@ -128,7 +132,7 @@ const CourseFilter = (props) => {
           <legend className="courseFilter__title">Мова</legend>
 
           <div className="courseFilter__input">
-            <input type="checkbox" id="scales" name="scales" checked />
+            <input type="checkbox" id="scales" name="scales"/>
             <label for="scales">Англійська</label>
           </div>
 

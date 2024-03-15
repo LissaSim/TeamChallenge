@@ -35,8 +35,7 @@ const CourseBanner = ({btnName, title, raiting, hasCertificate, img, price, leve
                             </span>
                             <span className="courseBanner__cost-full">{price} </span>
                         </div>
-                       <Link to={`${courseUrl}`}> <Button  content={btnName} classStyle='button--full'/> </Link>
-
+                        <Link to={`${courseUrl}`}> <Button  content={btnName} classStyle='button--full'/> </Link>
                     </div>
 
                 </div>
