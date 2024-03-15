@@ -5,10 +5,29 @@ import logo from '../../images/FS2S-head.svg'
 import arrow from '../../images/arrow.svg'
 import search from '../../images/search.svg'
 import Button from '../../components/Button/Button';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
+import courses from "../../components/Data/Courses.jsx";
 function Header() {
   const [isCourseListVisible, setIsCourseListVisible] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const navigate = useNavigate();
+
+  const searchCourse = (term, arr) => {
+    const foundCourse = arr.find(item => item.name === term);
+
+    if (foundCourse) {
+      navigate(`/courseList/${foundCourse.value}`);
+      setSearchTerm('')
+    }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      searchCourse(searchTerm, courses);
+    }
+  };
 
   const toggleCourseList = () => {
     setIsCourseListVisible(!isCourseListVisible);
@@ -23,24 +42,29 @@ function Header() {
               </Link>
             </div>
             <div className="header__search">
-              <img src={search} alt="search" />
-            <input
-              className="header__search-input"
-              type="text"
-              placeholder="Пошук "
-            />
-            <div className={`header__search-list ${isCourseListVisible ? 'active' : ''}`} onClick={toggleCourseList}>
-              <button className="header__list-btn" >
-                <span>Курси</span>
-                <img src={arrow} alt="arrow" />
-              </button>
-              <ul className="header__list-block">
-                <li>Курси</li>
-                <li>Статті</li>
-              </ul>
+              <img src={search} alt="search"/>
+              <input
+                  className="header__search-input"
+                  type="text"
+                  placeholder="Пошук "
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={handleKeyPress}
+              />
+              <div className={`header__search-list ${isCourseListVisible ? 'active' : ''}`} onClick={toggleCourseList}>
+                <button className="header__list-btn">
+                  {/*onClick={() => searchCourse(searchTerm, courses)}*/}
+                  <span>Курси</span>
+                  <img src={arrow} alt="arrow"/>
+                </button>
+                <ul className="header__list-block">
+                  <li>Курси</li>
+                  <li>Статті</li>
+                </ul>
+              </div>
+              {/*<button type='submit' onClick={() => searchCourse(searchTerm, courses)}><img src={search} alt="search"/></button>*/}
             </div>
-          </div>
-          <div className="header__list">
+            <div className="header__list">
             <button className="header__list-btn">
               <span>Категорії курсів</span>
               <img src={arrow} alt="arrow" />
