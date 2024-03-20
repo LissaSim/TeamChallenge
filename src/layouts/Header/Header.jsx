@@ -7,25 +7,20 @@ import search from '../../images/search.svg'
 import Button from '../../components/Button/Button';
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
-import courses from "../../components/Data/Courses.jsx";
 function Header() {
   const [isCourseListVisible, setIsCourseListVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
   const navigate = useNavigate();
 
-  const searchCourse = (term, arr) => {
-    const foundCourse = arr.find(item => item.name === term);
-
-    if (foundCourse) {
-      navigate(`/courseList/${foundCourse.value}`);
-      setSearchTerm('')
-    }
-  };
+  const searchCourse = (term) => {
+      navigate(`/courseList/${term}`)
+  }
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      searchCourse(searchTerm, courses);
+      searchCourse(searchTerm);
+      setSearchTerm('')
     }
   };
 

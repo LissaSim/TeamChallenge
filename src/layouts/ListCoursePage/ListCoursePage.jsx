@@ -1,3 +1,4 @@
+
 import './ListCoursePage.scss';
 import { ItemCourse } from '../../components/ItemCourse/ItemCourse';
 import Pagination from '../../components/Pagination/Pagination';
@@ -9,35 +10,47 @@ import CourseFilter from "../../components/CourseFilter/CourseFilter.jsx";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 import Spinner from "../../components/Spinner/Spinner.jsx";
 
-
- const ListCoursePage = () => {
+const ListCoursePage = () => {
     const [courseList, setCourseList] = useState([]);
     const [showContent, setShowContent] = useState(false);
-    const { getCourseList, getCourseCount, error, loading } = useUdemyService();
+    const [stringRequest, setStringRequest] = useState("");
+    const { getCourseList, getCourseCount, error, loading} = useUdemyService();
     const { value } = useParams();
     const [courseCount, setCourseCount] = useState(0);
+    const [courseCountLoading, setCourseCountLoading] = useState(true);
     const {
         page,
         totalPages,
+        // setTotalPages,
         nextPage,
         prevPage,
         setPage,
     } = usePagination({
         contentPerPage: 7,
-        count: courseCount ,
+        count: courseCount,
     });
+
+    const handleApplyFilters = (stringRequest) => {
+        setStringRequest(stringRequest);
+        setPage(1)
+    };
 
     useEffect(() => {
         loadCourseList();
-    }, [page, value]);
+    }, [page, value,stringRequest]);
 
     useEffect(() => {
+        setCourseCountLoading(true);
         getCourseCount(value)
-            .then(setCourseCount);
-    }, [value]);
+            .then(count => {
+                setCourseCount(count);
+                // setTotalPages(Math.ceil(count / 7));
+                setCourseCountLoading(false);
+            });
+    }, [value,stringRequest,page]);
 
     const loadCourseList = () => {
-        getCourseList(value, page)
+        getCourseList(value, page,stringRequest)
             .then(onLoaded);
     };
 
@@ -49,14 +62,14 @@ import Spinner from "../../components/Spinner/Spinner.jsx";
     const renderContent = (arr) => {
         return arr.map((course) => (
             <NavLink to={`course/${course.id}`} key={course.id} style={{textDecoration: "none", color: "black"}}>
-            <ItemCourse
-                id={course.id}
-                key={course.id}
-                title={course.title}
-                price={course.price}
-                avgRate={course.avgRate}
-                img={course.img}
-            />
+                <ItemCourse
+                    id={course.id}
+                    key={course.id}
+                    title={course.title}
+                    price={course.price}
+                    avgRate={course.avgRate}
+                    img={course.img}
+                />
             </NavLink>
         ));
     };
@@ -64,7 +77,7 @@ import Spinner from "../../components/Spinner/Spinner.jsx";
     const content = showContent && !loading && !error ? renderContent(courseList) : null;
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading ? <Spinner /> : null;
-    const filters = !loading && !error ? <CourseFilter/> : null;
+    const searchError = !courseCount && !courseCountLoading ? 'За вашим запитом нічого не знайдено' : null;
 
     return (
         <>
@@ -72,12 +85,13 @@ import Spinner from "../../components/Spinner/Spinner.jsx";
                 <h1 className="title-block">{value}</h1>
                 <div className="listCourse__wrap line">
                     <div className="listCourse__filter">
-                        {filters}
+                        <CourseFilter onApplyFilters={handleApplyFilters} />
                     </div>
                     <div className="listCourse__blocks">
                         {content}
                         {errorMessage}
                         {spinner}
+                        {searchError}
                     </div>
                 </div>
                 <Pagination
