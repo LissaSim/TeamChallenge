@@ -70,8 +70,8 @@ const useUdemyService  = () => {
         return reviews
     }
 
-    const getCourseList = async (value, pages = 1) => {
-       const res = await request(`${import.meta.env.VITE_base_Url}search/${value}?page=${pages}`);
+    const getCourseList = async (value, pages = 1, filter) => {
+       const res = await request(`${import.meta.env.VITE_base_Url}search/${value}?page=${pages}${filter}`);
 
        const courseList = res.courses.map((item) => ({
            id: item.id,
@@ -89,6 +89,7 @@ const useUdemyService  = () => {
 
         const courseCount = parseFloat(res.dataAmount);
         return courseCount
+
     }
 
     return {loading, error, getPopularCourses, getCourseById, clearError, getLectures, getReviews, getCourseList, getCourseCount}
