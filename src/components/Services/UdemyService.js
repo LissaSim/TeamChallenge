@@ -71,28 +71,22 @@ const useUdemyService  = () => {
     }
 
     const getCourseList = async (value, pages = 1, filter) => {
-       const res = await request(`${import.meta.env.VITE_base_Url}search/${value}?page=${pages}${filter}`);
+        const { courses, dataAmount } = await request(`${import.meta.env.VITE_base_Url}search/${value}?page=${pages}${filter}`);
 
-       const courseList = res.courses.map((item) => ({
-           id: item.id,
-           title: item.title,
-           price: item.price,
-           avgRate: parseFloat(item.avgRate).toFixed(1),
-           img: item.imageUrl_240x135
-       }))
+        const courseList = courses.map((item) => ({
+            id: item.id,
+            title: item.title,
+            price: item.price,
+            avgRate: parseFloat(item.avgRate).toFixed(1),
+            img: item.imageUrl_240x135
+        }));
 
-        return courseList
+        const courseCount = parseFloat(dataAmount);
+
+        return { courseList, courseCount };
     }
 
-    const getCourseCount = async (value) => {
-        const res = await request(`${import.meta.env.VITE_base_Url}search/${value}`);
-
-        const courseCount = parseFloat(res.dataAmount);
-        return courseCount
-
-    }
-
-    return {loading, error, getPopularCourses, getCourseById, clearError, getLectures, getReviews, getCourseList, getCourseCount}
+    return {loading, error, getPopularCourses, getCourseById, clearError, getLectures, getReviews, getCourseList}
 }
 export default useUdemyService;
 

@@ -9,6 +9,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 function Header() {
   const [isCourseListVisible, setIsCourseListVisible] = useState(false);
+  const [isCategoryVisible, setIsCategoryVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
   const navigate = useNavigate();
@@ -27,6 +28,10 @@ function Header() {
   const toggleCourseList = () => {
     setIsCourseListVisible(!isCourseListVisible);
   };
+  const toggleCategoryList = () => {
+    setIsCategoryVisible(!isCategoryVisible)
+  };
+
   return (
       <header className="header">
         <div className="container header__container">
@@ -59,7 +64,7 @@ function Header() {
               </div>
               {/*<button type='submit' onClick={() => searchCourse(searchTerm, courses)}><img src={search} alt="search"/></button>*/}
             </div>
-            <div className="header__list">
+            <div className={`header__list ${isCategoryVisible ? 'active' : ''}`} onClick={toggleCategoryList}>
             <button className="header__list-btn">
               <span>Категорії курсів</span>
               <img src={arrow} alt="arrow" />
