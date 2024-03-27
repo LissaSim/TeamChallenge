@@ -14,14 +14,13 @@ const ListCoursePage = () => {
     const [courseList, setCourseList] = useState([]);
     const [showContent, setShowContent] = useState(false);
     const [stringRequest, setStringRequest] = useState("");
-    const { getCourseList, getCourseCount, error, loading} = useUdemyService();
+    const { getCourseList, error, loading} = useUdemyService();
     const { value } = useParams();
     const [courseCount, setCourseCount] = useState(0);
     const [courseCountLoading, setCourseCountLoading] = useState(true);
     const {
         page,
         totalPages,
-        // setTotalPages,
         nextPage,
         prevPage,
         setPage,
@@ -39,24 +38,19 @@ const ListCoursePage = () => {
         loadCourseList();
     }, [page, value,stringRequest]);
 
-    useEffect(() => {
-        setCourseCountLoading(true);
-        getCourseCount(value)
-            .then(count => {
-                setCourseCount(count);
-                // setTotalPages(Math.ceil(count / 7));
-                setCourseCountLoading(false);
-            });
-    }, [value,stringRequest,page]);
-
     const loadCourseList = () => {
-        getCourseList(value, page,stringRequest)
-            .then(onLoaded);
-    };
-
-    const onLoaded = (newCourses) => {
-        setCourseList(newCourses);
-        setShowContent(true);
+        getCourseList(value, page, stringRequest)
+            .then(({ courseList: newCourses, courseCount: count }) => {
+                setCourseCount(count);
+                setCourseCountLoading(false);
+                setCourseList(newCourses);
+                setShowContent(true);
+            })
+            .catch((error) => {
+                console.error('Error loading course list:', error);
+                setCourseList([]);
+                setShowContent(true);
+            });
     };
 
     const renderContent = (arr) => {
@@ -73,6 +67,7 @@ const ListCoursePage = () => {
             </NavLink>
         ));
     };
+
 
     const content = showContent && !loading && !error ? renderContent(courseList) : null;
     const errorMessage = error ? <ErrorMessage /> : null;

@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 const CourseBanner = ({btnName, title, raiting, hasCertificate, img, price, level, discount, courseUrl, headline}) => {
     const getCertificate = hasCertificate ? <Label img = {certificate} text ='Сертифікат' /> : null;
-    const forBeginners = level === "Beginner Level" || "All Levels" ?  <Label img = {beginner} text ='Beginner' /> :  <Label img = {beginner} text ='Advanced' />
+    const forBeginners = level === "Beginner Level" || "All Levels" ?  <Label img = {beginner} text ='Beginner' /> :  <Label img = {expert} text ='Advanced' />
 
     return (
         <section className="courseBanner">
