@@ -21,7 +21,7 @@ function App() {
                 <Header />
                 <Main>
                     <Routes>
-                        <Route path="fs2s-eight.vercel.app" element={<MainPage/>}/>
+                        <Route path="/" element={<MainPage/>}/>
                         <Route path="fs2s-eight.vercel.app/course/:id" element={<CoursePage/>}/>
                         <Route path="https://www.udemy.com/:url" element={<CoursePage/>}/>
                         <Route path="fs2s-eight.vercel.app/courseList/:value" element={<ListCoursePage/>}/>
