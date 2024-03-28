@@ -1,0 +1,17 @@
+{
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api/(.*)", "dest": "/api/index.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "rewrites": [
+    { "source": "/course/:id", "destination": "/" },
+    { "source": "/courseList/:value", "destination": "/" },
+    { "source": "/courseList/:page", "destination": "/" },
+    { "source": "/courseList/:value/course/:id", "destination": "/" },
+    { "source": "/article", "destination": "/" }
+  ],
+  "env": {
+    "API_URL": "https://fs2s-eight.vercel.app"
+  }
+}

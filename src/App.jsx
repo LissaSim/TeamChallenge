@@ -22,11 +22,11 @@ function App() {
                 <Main>
                     <Routes>
                         <Route path="/" element={<MainPage/>}/>
-                        <Route path="https://fs2s-eight.vercel.app/course/:id" element={<CoursePage/>}/>
+                        <Route path="/course/:id" element={<CoursePage/>}/>
                         <Route path="https://www.udemy.com/:url" element={<CoursePage/>}/>
-                        <Route path="https://fs2s-eight.vercel.app/courseList/:value" element={<ListCoursePage/>}/>
-                        <Route path="https://fs2s-eight.vercel.app/courseList/:page" element={<ListCoursePage/>}/>
-                        <Route path="https://fs2s-eight.vercel.app/courseList/:value/course/:id" element={<CoursePage/>}/>
+                        <Route path="/courseList/:value" element={<ListCoursePage/>}/>
+                        <Route path="/courseList/:page" element={<ListCoursePage/>}/>
+                        <Route path="/courseList/:value/course/:id" element={<CoursePage/>}/>
                         <Route path="https://www.udemy.com/:url" element={<InfoBlockSection/>}/>
                         <Route path="/article" element={<ListArticles/>}/>
                         <Route path="*" element={<Error/>}/>
