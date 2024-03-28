@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/course/:id", "destination": "/index.html" },
+    { "source": "/courseList/:value", "destination": "/index.html" },
+    { "source": "/courseList/:page", "destination": "/index.html" },
+    { "source": "/courseList/:value/course/:id", "destination": "/index.html" },
+    { "source": "/article", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
