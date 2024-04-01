@@ -61,6 +61,7 @@ const ListCoursePage = () => {
                     key={course.id}
                     title={course.title}
                     price={course.price}
+                    discount={course.discountPrice}
                     avgRate={course.avgRate}
                     img={course.img}
                 />

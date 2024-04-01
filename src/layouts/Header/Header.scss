@@ -33,6 +33,7 @@
                 opacity: 1;
                 pointer-events: all;
                 cursor: pointer;
+
              
             }
 
@@ -87,7 +88,7 @@
                 .header__list-block{
                     opacity: 1;
                     pointer-events: all;
-                 
+
                 }
     
             }
@@ -151,5 +152,9 @@
         margin-left: 20px;
     }
 }
+    a:-webkit-any-link {
+        text-decoration: none;
+        color: black;
+    }
 
 }

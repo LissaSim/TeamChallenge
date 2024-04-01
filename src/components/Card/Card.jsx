@@ -4,7 +4,7 @@ import Stars from "../Stars/Stars";
 import heart from "../../images/heart.svg";
 
 const Card = (props) => {
-    const { title, price, img, rating } = props;
+    const { title, price, img, rating,sale } = props;
 
     return (
         <article className="card">

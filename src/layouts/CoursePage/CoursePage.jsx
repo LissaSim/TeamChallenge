@@ -70,6 +70,7 @@ const CoursePage = () => {
                           price={data.price}
                           discount={data.discountPrice}
                           img={data.img}
+                          video={data.video}
                           courseUrl={data.courseUrl}
                           headline={data.headline}/>
             <InfoBlockSection classWrap="row comments line">

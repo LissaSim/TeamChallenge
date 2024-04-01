@@ -41,12 +41,14 @@ const Popular = () => {
 
    const renderContent = (arr) => {
         return arr.map((course) => (
-            <Link to={`course/${course.id}`} key={course.id}><Card
+            <Link to={`course/${course.id}`} key={course.id}>
+                <Card
                 key={course.id}
                 title={course.title}
                 price={course.price}
                 rating={course.avgRate}
                 img={course.img}
+                sale={course.discountPrice}
             /></Link>
         ));
     };
