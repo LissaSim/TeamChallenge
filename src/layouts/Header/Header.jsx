@@ -5,8 +5,9 @@ import logo from '../../images/FS2S-head.svg'
 import arrow from '../../images/arrow.svg'
 import search from '../../images/search.svg'
 import Button from '../../components/Button/Button';
-import {Link, useNavigate} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import {useState} from "react";
+import courses from "../../components/Data/Courses.jsx";
 function Header() {
   const [isCourseListVisible, setIsCourseListVisible] = useState(false);
   const [isCategoryVisible, setIsCategoryVisible] = useState(false);
@@ -16,11 +17,11 @@ function Header() {
 
   const searchCourse = (term) => {
       navigate(`/courseList/${term}`)
-  }
+  };
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      searchCourse(searchTerm);
+      searchCourse(searchTerm.replace(/[^\w\s]/gi, ""));
       setSearchTerm('')
     }
   };
@@ -31,6 +32,14 @@ function Header() {
   const toggleCategoryList = () => {
     setIsCategoryVisible(!isCategoryVisible)
   };
+  const renderArticles = (arr) => {
+    return arr.map((item) => (
+        <NavLink to={`courseList/${item.value}`} key={item.id} className="block">
+          <li key={item.id}>{item.name}</li>
+        </NavLink>
+    ))
+  }
+  const content = renderArticles(courses)
 
   return (
       <header className="header">
@@ -53,7 +62,6 @@ function Header() {
               />
               <div className={`header__search-list ${isCourseListVisible ? 'active' : ''}`} onClick={toggleCourseList}>
                 <button className="header__list-btn">
-                  {/*onClick={() => searchCourse(searchTerm, courses)}*/}
                   <span>Курси</span>
                   <img src={arrow} alt="arrow"/>
                 </button>
@@ -62,7 +70,6 @@ function Header() {
                   <li>Статті</li>
                 </ul>
               </div>
-              {/*<button type='submit' onClick={() => searchCourse(searchTerm, courses)}><img src={search} alt="search"/></button>*/}
             </div>
             <div className={`header__list ${isCategoryVisible ? 'active' : ''}`} onClick={toggleCategoryList}>
             <button className="header__list-btn">
@@ -70,19 +77,7 @@ function Header() {
               <img src={arrow} alt="arrow" />
             </button>
             <ul className="header__list-block">
-              <li>3D та анімація</li>
-              <li>Аналітика даних </li>
-              <li>Дизайн</li>
-              <li>Дизайн ігор</li>
-              <li>Інтернет та Веб розробка</li>
-              <li>Кібербезпека</li>
-              <li>Мови програмування</li>
-              <li>Проєктування та розробка без даних</li>
-              <li>Розробка ігор</li>
-              <li>Розробка мобільних додатків</li>
-              <li>Розробка програмного забезбечення</li>
-              <li>Тестування програмного забезпечення</li>
-              <li>Управління проєктами та ресурсами</li>
+              {content}
             </ul>
           </div>
         </div>

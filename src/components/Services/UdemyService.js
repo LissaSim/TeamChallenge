@@ -23,7 +23,7 @@ const useUdemyService  = () => {
     };
 
    const getCourseById = async (id) => {
-        const res = await request(`${import.meta.env.VITE_base_Url + id}`)
+        const res = await request(`${import.meta.env.VITE_base_Url + id}`);
 
         const resObj = {
             id: res.id,
@@ -42,7 +42,8 @@ const useUdemyService  = () => {
             quizzesAmount: res.quizzesAmount,
             hasCertificate: res.hasCertificate,
             description: res.description,
-            requirements: res.requirements.map(item => item)
+            requirements: res.requirements.map(item => item),
+            video: res.videos[1].videoURL
         };
 
         return resObj;
@@ -77,6 +78,7 @@ const useUdemyService  = () => {
             id: item.id,
             title: item.title,
             price: item.price,
+            discountPrice: item.discount,
             avgRate: parseFloat(item.avgRate).toFixed(1),
             img: item.imageUrl_240x135
         }));
