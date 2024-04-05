@@ -71,7 +71,7 @@ function Header() {
                 </ul>
               </div>
             </div>
-            <div className={`header__list ${isCategoryVisible ? 'active' : ''}`} onClick={toggleCategoryList}>
+            <div className={`header__list ${isCategoryVisible ? 'active' : ''}`} onMouseEnter={toggleCategoryList}>
             <button className="header__list-btn">
               <span>Категорії курсів</span>
               <img src={arrow} alt="arrow" />

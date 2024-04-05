@@ -24,8 +24,9 @@ const useUdemyService  = () => {
 
    const getCourseById = async (id) => {
         const res = await request(`${import.meta.env.VITE_base_Url + id}`);
+        const visibleVideo = res.videos && res.videos.length > 0 ? res.videos[0].videoURL : false;
 
-        const resObj = {
+       const resObj = {
             id: res.id,
             title: res.title,
             price: res.price,
@@ -43,7 +44,7 @@ const useUdemyService  = () => {
             hasCertificate: res.hasCertificate,
             description: res.description,
             requirements: res.requirements.map(item => item),
-            video: res.videos[1].videoURL
+            video: visibleVideo
         };
 
         return resObj;

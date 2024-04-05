@@ -1,10 +1,10 @@
 import "../../scss/general.scss";
 import "./CardPopularArticles.scss";
 
-const CardPopularArticles = ({id, img, name, description}) => {
+const CardPopularArticles = ({img, name, description}) => {
 
     return (
-        <article className="card" key={id}>
+        <article className="card">
             <div className="card__img">
                 <img src={img} alt=""/>
             </div>

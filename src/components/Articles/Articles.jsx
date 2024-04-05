@@ -3,6 +3,7 @@ import '../../scss/general.scss';
 import './Articles.scss';
 import CardPopularArticles from '../CardPopularArticles/CardPopularArticles.jsx';
 import popularArticles from '../Data/PopularArticles.jsx';
+import {NavLink} from "react-router-dom";
 
 function Articles() {
     let initial = popularArticles.slice(0,3);
@@ -26,14 +27,14 @@ function Articles() {
     const renderContent = (arr) => {
         return arr.map((item) => (
             <CardPopularArticles
-            key= {item.id}
-            name={item.name}
-            img={item.img}
-            description={item.description}/>
+                key= {item.id}
+                name={item.name}
+                img={item.img}
+                description={item.description}/>
         ))
     }
 
-    const content = renderContent(initial)
+    const content = renderContent(currentItems)
 
     return (
         <section className="articles">

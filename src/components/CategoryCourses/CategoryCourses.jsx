@@ -3,6 +3,7 @@ import './CategoryCourses.scss';
 import BlockCourses from "../BlockCourses/BlockCourses.jsx";
 import {useState} from "react";
 import articles from "../Data/Articles.jsx"
+import {NavLink} from "react-router-dom";
 const CategoryCourses = (props) => {
     const [newCourses, setNewCourses] = useState(false);
     const [offset, setOffset] = useState(6)
@@ -20,11 +21,13 @@ const CategoryCourses = (props) => {
 
     const renderCourses = (arr,next) => {
         return arr.slice(0,next).map((item) => (
-            <BlockCourses
-                key={item.id}
-                name={item.name}
-                description={item.description}
-                img={item.img}/>
+            <NavLink to={`/article/${item.name}`} key={item.id} className='block'>
+                <BlockCourses
+                    key={item.id}
+                    name={item.name}
+                    description={item.description}
+                    img={item.img}/>
+            </NavLink>
         ))
     }
 

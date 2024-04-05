@@ -4,7 +4,7 @@ import './BlockCourses.scss';
 const BlockCourse = ({id, img, name, description}) => {
 
         return(
-            <article className="block" key={id}>
+            <>
                 <div className="block__img">
                     <img src={img} alt="" />
                 </div>
@@ -19,7 +19,7 @@ const BlockCourse = ({id, img, name, description}) => {
                         </p>
                     </div>
                 </div>
-            </article>
+            </>
         )
 }
 export default BlockCourse;
