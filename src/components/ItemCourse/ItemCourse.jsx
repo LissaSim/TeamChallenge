@@ -1,10 +1,12 @@
 import './ItemCourse.scss';
 import Stars from '../Stars/Stars';
 export const ItemCourse = ({price, img, avgRate, title, discount}) => {
+    const discountPrice = discount ? <div><h5>{discount}</h5> <h4 className='price__discount'>{price}</h4></div> : null;
+    const actualPrice = !discount ? <h5>{price}</h5> : null
     return (
         <article className="itemCourse">
             <div className="itemCourse__imag">
-                <img src={img} alt="" />
+                <img src={img} alt=""/>
             </div>
             <div className="itemCourse__inner">
                 <div className="itemCourse__desc">
@@ -17,9 +19,8 @@ export const ItemCourse = ({price, img, avgRate, title, discount}) => {
 
                     </div>
                     <div className="itemCourse__price">
-                        <h5>{price}</h5>
-                        <h4 className='price__discount'>{discount}</h4>
-
+                        {discountPrice}
+                        {actualPrice}
                     </div>
 
                 </div>

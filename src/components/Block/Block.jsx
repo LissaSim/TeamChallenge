@@ -1,9 +1,9 @@
 import '../../scss/general.scss'
 import './Block.scss';
 
-const Block = ({id, name, description, img}) => {
+const Block = ({name, description, img}) => {
         return(
-            <article className="block" key={id}>
+            <>
                 <div className="block__img">
                     <img src={img} alt="" />
                 </div>
@@ -18,7 +18,7 @@ const Block = ({id, name, description, img}) => {
                         </p>
                     </div>
                 </div>
-            </article>
+            </>
         )
 }
 export default Block;

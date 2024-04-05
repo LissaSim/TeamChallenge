@@ -3,12 +3,16 @@ import Stars from '../Stars/Stars';
 import Button from '../Button/Button';
 import certificate from '../../assets/img/certificate.svg';
 import beginner from '../../assets/img/beginner.svg';
+import intermediate from '../../assets/img/intermediate.svg';
+import expert from '../../assets/img/expert.svg';
 import Label from '../Label/Label';
 import {Link} from "react-router-dom";
 
 const CourseBanner = ({btnName, title, raiting, hasCertificate, img, price, level, discount, courseUrl, headline, video}) => {
     const getCertificate = hasCertificate ? <Label img={certificate} text='Сертифікат'/> : null;
     const forBeginners = level === "Beginner Level" ? <Label img={beginner} text='Beginner'/> : null;
+    const forIntermediate = level === "Intermediate Level" ? <Label img={intermediate} /> : null;
+    const forExpert = level === "Expert Level" ? <Label img={expert}/> : null;
     const view = video ?
             <video controls style={{height: 270, width: 480}}>
             <source src={video} alt="" type="video/mp4"/>
@@ -31,6 +35,8 @@ const CourseBanner = ({btnName, title, raiting, hasCertificate, img, price, leve
                     <div className="courseBanner__labels">
                         {getCertificate}
                         {forBeginners}
+                        {forIntermediate}
+                        {forExpert}
                     </div>
                     <div className="courseBanner__block">
 
