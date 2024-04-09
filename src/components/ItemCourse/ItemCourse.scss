@@ -1,6 +1,13 @@
 .itemCourse {
     display: flex;
     gap: 18px;
+    transition: transform 0.3s linear;
+
+    &:hover {
+        transform: scale(1.02);
+        color: #353395;
+
+    }
 
     &__desc {
         display: inline-flex;
@@ -21,6 +28,7 @@
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
+            transition: color 0.3s linear;
         }
 
         h4 {
@@ -33,6 +41,7 @@
             font-weight: 400;
             line-height: normal;
             text-decoration-line: strikethrough;
+            transition: color 0.3s linear;
         }
 
         span {

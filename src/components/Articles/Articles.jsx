@@ -3,11 +3,10 @@ import '../../scss/general.scss';
 import './Articles.scss';
 import CardPopularArticles from '../CardPopularArticles/CardPopularArticles.jsx';
 import popularArticles from '../Data/PopularArticles.jsx';
-import {NavLink} from "react-router-dom";
 
 function Articles() {
     let initial = popularArticles.slice(0,3);
-    let newArticles = popularArticles.slice(3,4)
+    let newArticles = popularArticles.slice(3,6)
     const [currentItems, setCurrentItems] = useState(initial);
     const [leftActive, setLeftActive] = useState(false);
     const [rightActive, setRightActive] = useState(true)
@@ -40,7 +39,7 @@ function Articles() {
         <section className="articles">
             <div className="container">
                 <div className="line">
-                    <h2 className="title-block">Популярні статті Udemy</h2>
+                    <h2 className="title-block">Популярні статті </h2>
                     <div className="articles__wrap">
                         <button
                             className={`articles__nav articles__nav--left ${leftActive ? 'active' : ''}`}
