@@ -42,17 +42,25 @@
     &__article {
         display: flex;
         gap: 24px;
+        margin: 10px;
+        transition: transform 0.3s linear;
+
+        &:hover {
+            transform: scale(1.02);
+            color: #353395;
+
+        }
 
         &:not(:last-child) {
             margin-bottom: 24px;
         }
 
         &-img {
-            width: 400px;
+            width: 300px;
 
             & img {
-                width: 400px;
-                height: 274px;
+                width: 300px;
+                height: 174px;
                 object-fit: cover;
             }
         }
@@ -64,6 +72,7 @@
                 font-weight: 700;
                 font-size: 20px;
                 color: #1e1e1e;
+                transition: color 0.3s linear;
             }
 
             & p {
@@ -72,6 +81,7 @@
                 font-size: 16px;
                 color: #1e1e1e;
                 line-height: 120%;
+                transition: color 0.3s linear;
             }
         }
     }

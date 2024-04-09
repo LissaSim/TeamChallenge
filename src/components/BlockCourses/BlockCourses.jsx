@@ -1,7 +1,7 @@
 import '../../scss/general.scss'
 import './BlockCourses.scss';
 
-const BlockCourse = ({id, img, name, description}) => {
+const BlockCourse = ({img, name, description}) => {
 
         return(
             <>

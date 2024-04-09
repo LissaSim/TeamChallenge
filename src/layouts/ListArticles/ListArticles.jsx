@@ -2,23 +2,25 @@ import './ListArticles.scss';
 import Pagination from '../../components/Pagination/Pagination';
 import Button from '../../components/Button/Button';
 import articles from "../../components/Data/Articles.jsx";
-import {NavLink, useParams} from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import articlesList from "../../components/Data/ArticlesList.jsx";
+
 const ListArticles = () => {
-    const {name} = useParams();
-    // const currentArticles = articlesList[name] || [];
+    const { value } = useParams(); // Получаем значение параметра из URL
     const renderButtons = (arr) => {
         return arr.map((item) => (
             <Button
                 key={item.id}
-                classStyle={item.name === name ? "button--line active" : "button--line"}
+                classStyle={item.value === value ? "button--line active" : "button--line"}
                 content={item.name}
             />
         ));
     };
 
-    const renderContent = (arr) => {
-        return arr.map((item) => (
+    const filteredArticles = articlesList[value] || [];
+
+    const renderContent = () => {
+        return filteredArticles.map((item) => (
             <NavLink to={item.reference} key={item.id}>
                 <div className="listArticles__article" key={item.id}>
                     <div className="listArticles__article-img">
@@ -30,29 +32,29 @@ const ListArticles = () => {
                     </div>
                 </div>
             </NavLink>
-        ))
+        ));
     }
 
     const buttons = renderButtons(articles);
-    const content = renderContent(articlesList.mobileArticles)
-    // const content = renderContent(currentArticles);
+    const totalPages = 1;
+    const page= 1
 
     return (
         <div className='listArticles container'>
-            <h1 className="title-block">{name}</h1>
+            <h1 className="title-block">{value}</h1>
 
             <div className="listArticles__articles">
                 <div className="listArticles__articles-filter">
                     {buttons}
                 </div>
                 <div className="listArticles__articles-inner">
-                    {content}
+                    {renderContent()}
                 </div>
             </div>
-            <Pagination></Pagination>
+            <Pagination totalPages={totalPages} page={page} />
         </div>
     )
 };
-export default ListArticles;
 
+export default ListArticles;
 

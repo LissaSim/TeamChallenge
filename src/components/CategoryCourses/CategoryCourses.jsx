@@ -21,10 +21,11 @@ const CategoryCourses = (props) => {
 
     const renderCourses = (arr,next) => {
         return arr.slice(0,next).map((item) => (
-            <NavLink to={`/article/${item.name}`} key={item.id} className='block'>
+            <NavLink to={`/article/${item.value}`} key={item.id} className='block'>
                 <BlockCourses
                     key={item.id}
                     name={item.name}
+                    value={item.value}
                     description={item.description}
                     img={item.img}/>
             </NavLink>
