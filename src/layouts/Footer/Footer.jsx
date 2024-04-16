@@ -59,7 +59,7 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>Backend - Гліб Фєтісов</span>
+                <NavLink to={"https://www.linkedin.com/in/hlib-fietisov-004231235/edit/forms/next-action/after-connect-add-position/"}><span>Backend - Гліб Фєтісов</span></NavLink>
               </li>
               <li>
                 <svg
@@ -74,7 +74,7 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>Designer - Анна Кохно</span>
+                <NavLink to={"https://www.linkedin.com/in/anna-kokhno-698620271/edit/forms/next-action/after-connect-add-position/"}><span>Designer - Анна Кохно</span></NavLink>
               </li>
               <li>
                 <svg
@@ -89,10 +89,10 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>Frontend - Єлизавета Сімутіна</span>
+                <NavLink to={"https://www.linkedin.com/in/yelizaveta-simutina-640744279/"}><span>Frontend - Єлизавета Сімутіна</span></NavLink>
               </li>
               <li>
-                <svg
+              <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -119,10 +119,10 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>Project manager - Юлія Горак</span>
+                <NavLink to={"https://www.linkedin.com/in/yuliia-horak/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"}><span>Project manager - Юлія Горак</span></NavLink>
               </li>
               <li>
-                <svg
+              <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -134,7 +134,7 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>QA - Ростислав Пархоменко</span>
+                <NavLink to={"https://www.linkedin.com/in/rostislav-parkhomenko-888abb260/"}><span>QA - Ростислав Пархоменко</span></NavLink>
               </li>
             </ul>
           </div>
