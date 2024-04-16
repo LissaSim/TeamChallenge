@@ -32,7 +32,7 @@ const articles = [
         description: 'Створення тривимірних моделей та їх рух через час для створення вражаючих візуальних ефектів у фільмах, іграх та рекламі.',
         name: '3D та анімація',
         id: 3,
-        value: "3D"
+        value: "DesignAnimation"
     },
     {
         img: imgProg,
@@ -97,13 +97,6 @@ const articles = [
         id: 12,
         value: "QA"
     },
-    {
-        img: imgDesign,
-        description: "Творчий процес створення візуально привабливих та функціональних рішень для вирішення конкретних завдань",
-        name: "Дизайн",
-        id: 13,
-        value: "Design"
-    }
 ]
 
 export default articles

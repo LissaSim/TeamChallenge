@@ -2,25 +2,30 @@ import './ListArticles.scss';
 import Pagination from '../../components/Pagination/Pagination';
 import Button from '../../components/Button/Button';
 import articles from "../../components/Data/Articles.jsx";
-import { NavLink, useParams } from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import articlesList from "../../components/Data/ArticlesList.jsx";
+import React, {useState} from "react";
 
 const ListArticles = () => {
-    const { value } = useParams(); // Получаем значение параметра из URL
+    const {value} = useParams();
+    const filteredArticles = articlesList[value];
+    const totalPages = Math.ceil(filteredArticles.length / 3); // Определяем общее количество страниц
+    const [page, setPage] = useState(1); // Текущая страница
+
     const renderButtons = (arr) => {
         return arr.map((item) => (
-            <Button
-                key={item.id}
-                classStyle={item.value === value ? "button--line active" : "button--line"}
-                content={item.name}
-            />
+            <NavLink to={`/article/${item.value}`} key={item.id}>
+                <Button
+                    key={item.id}
+                    classStyle={item.value === value ? "button--line active" : "button--line"}
+                    content={item.name}
+                /></NavLink>
         ));
     };
-
-    const filteredArticles = articlesList[value] || [];
-
     const renderContent = () => {
-        return filteredArticles.map((item) => (
+        const startIndex = (page - 1) * 3;
+        const endIndex = startIndex + 3;
+        return filteredArticles.slice(startIndex, endIndex).map((item) => (
             <NavLink to={item.reference} key={item.id}>
                 <div className="listArticles__article" key={item.id}>
                     <div className="listArticles__article-img">
@@ -33,11 +38,18 @@ const ListArticles = () => {
                 </div>
             </NavLink>
         ));
-    }
+    };
+
 
     const buttons = renderButtons(articles);
-    const totalPages = 1;
-    const page= 1
+    const nextPage = () => {
+        setPage(prevPage => Math.min(prevPage + 1, totalPages));
+    };
+
+    const prevPage = () => {
+        setPage(prevPage => Math.max(prevPage - 1, 1));
+    };
+    const content = renderContent(filteredArticles)
 
     return (
         <div className='listArticles container'>
@@ -48,13 +60,18 @@ const ListArticles = () => {
                     {buttons}
                 </div>
                 <div className="listArticles__articles-inner">
-                    {renderContent()}
+                    {content}
                 </div>
             </div>
-            <Pagination totalPages={totalPages} page={page} />
+            <Pagination
+                nextPage={nextPage}
+                prevPage={prevPage}
+                totalPages={totalPages}
+                page={page}
+                setPage={setPage}
+            />
         </div>
     )
 };
 
 export default ListArticles;
-
