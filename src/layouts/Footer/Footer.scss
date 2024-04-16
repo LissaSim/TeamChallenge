@@ -49,4 +49,8 @@
     &__logo {
         height: 58px;
     }
+    a:-webkit-any-link {
+        text-decoration: none;
+        color: white;
+    }
 }

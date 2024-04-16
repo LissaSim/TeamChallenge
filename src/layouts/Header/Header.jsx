@@ -71,12 +71,12 @@ function Header() {
                 </ul>
               </div>
             </div>
-            <div className={`header__list ${isCategoryVisible ? 'active' : ''}`} onMouseEnter={toggleCategoryList}>
+            <div className={`header__list ${isCategoryVisible ? 'active' : ''}`}>
             <button className="header__list-btn">
-              <span>Категорії курсів</span>
+              <span onMouseEnter={toggleCategoryList}>Категорії курсів</span>
               <img src={arrow} alt="arrow" />
             </button>
-            <ul className="header__list-block">
+            <ul className="header__list-block" onMouseLeave={toggleCategoryList}>
               {content}
             </ul>
           </div>

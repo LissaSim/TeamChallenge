@@ -1,8 +1,28 @@
 import '../../scss/general.scss'
 import './Footer.scss'
 import logoFooter from '../../images/FS2S-footer.svg'
+import {NavLink} from "react-router-dom";
+import courses from "../../components/Data/Courses.jsx";
+import articles from "../../components/Data/Articles.jsx";
 
 function Footer() {
+  const renderCourses = (arr) => {
+    return arr.map((item) => (
+        <NavLink to={`courseList/${item.value}`} key={item.id} className="footer__list">
+          <li key={item.id} style={{margin: "8px"}}>{item.name}</li>
+        </NavLink>
+    ))
+  }
+  const renderArticles = (arr) => {
+    return arr.map((item) => (
+        <NavLink to={`article/${item.value}`} key={item.id} className="footer__list">
+          <li key={item.id} style={{margin: "8px"}}>{item.name}</li>
+        </NavLink>
+    ))
+  }
+  const coursesList = renderCourses(courses);
+  const articlesList = renderArticles(articles)
+
   return (
     <footer className="footer">
       <div className="container footer__container">
@@ -13,28 +33,14 @@ function Footer() {
         <div className="footer__lists">
           <div >
             <h3 className="footer__list-title">Категорії курсів</h3>
-            <ul className="footer__list">
-              <li>3D та анімація</li>      
-              <li>Аналітика даних </li>
-              <li>Дизайн</li>
-              <li>Інтернет та Веб розробка</li>
-              <li>Кібербезпека</li>
-              <li>Розробка мобільних додатків</li>
-              <li>Розробка програмного забезбечення</li>
-              <li>Управління проєктами та ресурсами</li>
-          
+            <ul>
+            {coursesList}
             </ul>
           </div>
           <div>
             <h3 className="footer__list-title">Категорії статей</h3>
             <ul className="footer__list">
-              <li>Аналітика даних </li>
-              <li>Дизайн</li>
-              <li>Інтернет та Веб розробка</li>
-              <li>Кібербезпека</li>
-              <li>Розробка ігор</li>
-              <li>Розробка програмного забезбечення</li>
-              <li>Управління проєктами та ресурсами</li>
+              {articlesList}
             </ul>
           </div>
           <div>
