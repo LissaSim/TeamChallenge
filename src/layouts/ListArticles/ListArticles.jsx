@@ -4,13 +4,17 @@ import Button from '../../components/Button/Button';
 import articles from "../../components/Data/Articles.jsx";
 import {NavLink, useParams} from "react-router-dom";
 import articlesList from "../../components/Data/ArticlesList.jsx";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 const ListArticles = () => {
     const {value} = useParams();
     const filteredArticles = articlesList[value];
-    const totalPages = Math.ceil(filteredArticles.length / 3); // Определяем общее количество страниц
-    const [page, setPage] = useState(1); // Текущая страница
+    const totalPages = Math.ceil(filteredArticles.length / 3);
+    const [page, setPage] = useState(1);
+
+    useEffect(() => {
+        setPage(1);
+    }, [value]);
 
     const renderButtons = (arr) => {
         return arr.map((item) => (

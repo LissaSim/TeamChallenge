@@ -1,21 +1,29 @@
 import articlesList from "./ArticlesList.jsx";
 
 const getRandomArticle = () => {
-    // Выбираем случайную категорию
     const categories = Object.keys(articlesList);
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
 
-    // Получаем массив статей для выбранной категории
     const articles = articlesList[randomCategory];
 
-    // Выбираем случайную статью из массива
     const randomIndex = Math.floor(Math.random() * articles.length);
     return articles[randomIndex];
 };
+ const popularArticles = [];
+ export const updatePopularArticles = () => {
+    popularArticles.length = 0;
 
-// Создаем массив случайных статей
-const popularArticles = [];
-const numberOfRandomArticles = 6; // Желаемое количество случайных статей
+    const numberOfRandomArticles = 6;
+    for (let i = 0; i < numberOfRandomArticles; i++) {
+        popularArticles.push(getRandomArticle());
+    }
+
+    // Вызываем функцию updatePopularArticles повторно через 1 минуту
+    setTimeout(updatePopularArticles, 60000); // 60000 мс = 1 минута
+};
+ updatePopularArticles();
+
+const numberOfRandomArticles = 6;
 
 for (let i = 0; i < numberOfRandomArticles; i++) {
     popularArticles.push(getRandomArticle());
