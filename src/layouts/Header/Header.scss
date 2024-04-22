@@ -111,6 +111,10 @@
             height: 100%;
             border-radius: 0 10px 10px 0;
         }
+        & .header__list-img{
+            padding: 7px 0;
+            margin: 0 10px;
+        }
         & .header__list-block{
             min-width: 110px;
             &>li{

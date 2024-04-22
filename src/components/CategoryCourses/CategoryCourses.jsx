@@ -4,6 +4,7 @@ import BlockCourses from "../BlockCourses/BlockCourses.jsx";
 import {useState} from "react";
 import articles from "../Data/Articles.jsx"
 import {NavLink} from "react-router-dom";
+
 const CategoryCourses = (props) => {
     const [newCourses, setNewCourses] = useState(false);
     const [offset, setOffset] = useState(6)
@@ -19,8 +20,8 @@ const CategoryCourses = (props) => {
         }
     }
 
-    const renderCourses = (arr,next) => {
-        return arr.slice(0,next).map((item) => (
+    const renderCourses = (arr, next) => {
+        return arr.slice(0, next).map((item) => (
             <NavLink to={`/article/${item.value}`} key={item.id} className='block'>
                 <BlockCourses
                     key={item.id}
@@ -45,7 +46,7 @@ const CategoryCourses = (props) => {
                     <div className="category__inner">
                         <button
                             className='button button--line'
-                            onClick={loadingNewCourses}>{newCourses ? "Менше статей" : "Більше статей"}</button>
+                            onClick={loadingNewCourses}>{newCourses ? "Менше категорій" : "Більше категорій"}</button>
                     </div>
 
 

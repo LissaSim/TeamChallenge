@@ -248,14 +248,6 @@ const articlesList = {
             img: imgDesignAnimation6,
             reference: "https://blog.ithillel.ua/videos/who-are-web-designers-event",
             value: "DesignAnimation"
-        },
-        {
-            id: 22,
-            title: "Як знайти свій стиль і де брати натхнення дизайнеру",
-            description: "Стилі в дизайні можна розділити на комерційні та ефектні. Тому під кожен проєкт підбирається свій стиль і ти, як фахівець, маєш бути неупередженим до будь-якого зі стилів.",
-            img: imgDesignAnimation7,
-            reference: "https://blog.ithillel.ua/articles/where-to-get-inspiration-for-a-designer",
-            value: "DesignAnimation"
         }
     ],
     ProjectManagement: [

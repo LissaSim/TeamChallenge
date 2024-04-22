@@ -28,12 +28,12 @@ function Footer() {
       <div className="container footer__container">
       <div className="footer__footer">
           <img className='footer__logo' src={logoFooter} alt="FS2S" />
-          <span>© 2023 FS2S, Inc.</span>
+          <span>© 2024 FS2S, Inc.</span>
         </div>
         <div className="footer__lists">
           <div >
             <h3 className="footer__list-title">Категорії курсів</h3>
-            <ul>
+            <ul className="footer__list">
             {coursesList}
             </ul>
           </div>

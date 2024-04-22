@@ -9,7 +9,6 @@ import {Link, NavLink, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import courses from "../../components/Data/Courses.jsx";
 function Header() {
-  const [isCourseListVisible, setIsCourseListVisible] = useState(false);
   const [isCategoryVisible, setIsCategoryVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -19,15 +18,9 @@ function Header() {
       navigate(`/courseList/${term}`)
   };
 
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+  const handleKeyPress = () => {
       searchCourse(searchTerm.replace(/[^\w\s]/gi, ""));
-      setSearchTerm('')
-    }
-  };
-
-  const toggleCourseList = () => {
-    setIsCourseListVisible(!isCourseListVisible);
+      setSearchTerm('');
   };
   const toggleCategoryList = () => {
     setIsCategoryVisible(!isCategoryVisible)
@@ -51,24 +44,17 @@ function Header() {
               </Link>
             </div>
             <div className="header__search">
-              <img src={search} alt="search"/>
               <input
                   className="header__search-input"
                   type="text"
                   placeholder="Пошук "
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  onKeyDown={handleKeyPress}
               />
-              <div className={`header__search-list ${isCourseListVisible ? 'active' : ''}`} onClick={toggleCourseList}>
-                <button className="header__list-btn">
-                  <span>Курси</span>
-                  <img src={arrow} alt="arrow"/>
+              <div className={`header__search-list`}>
+                <button className="header__list-btn" onClick={handleKeyPress}>
+                  <img src={search} alt="search" className="header__list-img"/>
                 </button>
-                <ul className="header__list-block">
-                  <li>Курси</li>
-                  <li>Статті</li>
-                </ul>
               </div>
             </div>
             <div className={`header__list ${isCategoryVisible ? 'active' : ''}`}>
