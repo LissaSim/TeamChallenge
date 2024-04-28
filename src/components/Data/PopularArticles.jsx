@@ -18,8 +18,7 @@ const getRandomArticle = () => {
         popularArticles.push(getRandomArticle());
     }
 
-    // Вызываем функцию updatePopularArticles повторно через 1 минуту
-    setTimeout(updatePopularArticles, 60000); // 60000 мс = 1 минута
+    setTimeout(updatePopularArticles, 86400000);
 };
  updatePopularArticles();
 
