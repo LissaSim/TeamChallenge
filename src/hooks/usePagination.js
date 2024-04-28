@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 export const usePagination = ({ contentPerPage, count }) => {
     const [page, setPage] = useState(1);
-    const totalPages = (Math.floor(count / contentPerPage) - Math.ceil(count * 0.01))
+    let totalPages = (Math.floor(count / contentPerPage) - Math.ceil(count * 0.01));
+    totalPages = totalPages < 1 ? 1 : totalPages
 
     const nextPage = () => {
         setPage(prevPage => Math.min(prevPage + 1, totalPages));

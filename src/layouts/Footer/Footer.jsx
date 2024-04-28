@@ -104,10 +104,10 @@ function Footer() {
                     fill="#FAFAFA"
                   />
                 </svg>
-                <span>Frontend - Тетяна Федоренко</span>
+                <NavLink to={"https://www.linkedin.com/in/tetiana-fedorenko-24b187113/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"}><span>Frontend - Тетяна Федоренко</span></NavLink>
               </li>
               <li>
-                <svg
+              <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
