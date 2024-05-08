@@ -10,7 +10,7 @@ const getRandomArticle = () => {
     return articles[randomIndex];
 };
  const popularArticles = [];
- export const updatePopularArticles = () => {
+ const updatePopularArticles = () => {
     popularArticles.length = 0;
 
     const numberOfRandomArticles = 6;
@@ -28,3 +28,7 @@ for (let i = 0; i < numberOfRandomArticles; i++) {
     popularArticles.push(getRandomArticle());
 }
 export default popularArticles
+
+
+
+

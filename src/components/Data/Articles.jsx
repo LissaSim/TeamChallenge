@@ -46,7 +46,7 @@ const articles = [
         description: 'Розробка програм для мобільних платформ',
         name: 'Мобільна розробка',
         id: 5,
-        value: "Mobile"
+        value: "MobileDev"
     },
     {
         img: imgWeb,
@@ -74,7 +74,7 @@ const articles = [
         description: "Творчий процес створення геймплею, персонажів, сюжету та інших аспектів відеоігор для досягнення цікавого геймерського досвіду",
         name: 'Дизайн ігор',
         id: 9,
-        value: "DesignGame"
+        value: "GameDesign"
     },
     {
         img: imgGameDev,
