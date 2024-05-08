@@ -35,7 +35,7 @@ function Articles() {
         ))
     }
 
-    const content = renderContent(currentItems)
+    const content = renderContent(currentItems);
 
     return (
         <section className="articles">
@@ -83,4 +83,3 @@ function Articles() {
 }
 
 export default Articles;
-Articles.jsx

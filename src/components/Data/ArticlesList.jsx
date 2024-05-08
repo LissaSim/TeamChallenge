@@ -66,14 +66,14 @@ import imgGameDesign5 from "../../images/articlesList/gettyimages-1170073824.jpg
 
 
 const articlesList = {
-    Mobile : [
+    MobileDev : [
         {
             id: 1,
             title: "Мобільний розробник: обов’язки та необхідні навички",
             description: "Мобільний розробник – це фахівець, який займається створенням і розробкою мобільних додатків для смартфонів і планшетів. Він відповідає за створення функціональних і привабливих застосунків для розв’язання різноманітних завдань, що надають зручний доступ до інформації та забезпечують позитивний користувацький досвід.",
             img: img1,
             reference: "https://foxminded.ua/mobilnyi-rozrobnyk/",
-            value: "Mobile"
+            value: "MobileDev"
         },
         {
             id: 2,
@@ -81,7 +81,7 @@ const articlesList = {
             description: "Якщо ще пару століть назад в різних частинах світу людей масово охоплювала Золота лихоманка, то зараз з упевненістю можна сказати, що сучасний світ цілком і повністю поглинений мобільною лихоманкою. Чи знайдеться у вашому оточенні хоча б одна людина, яка не користується смартфоном? Та яке там. Продажі смартфонів зростають з блискавичною швидкістю, а компанії-виробники вкладають величезні суми в мобільні технології, їх розвиток і популяризацію на ринку. Мобільна розробка – дуже стрімко зростаюча область програмування, адже кількість мобільних пристроїв значно перевищує кількість персональних комп’ютерів, і ця тенденція буде тільки зростати.",
             img: img2,
             reference: "https://dan-it.com.ua/uk/blog/rozrobka-mobilnih-dodatkiv-vid-a-do-ja-povnij-gajd/",
-            value: "Mobile"
+            value: "MobileDev"
         },
         {
             id: 3,
@@ -89,7 +89,7 @@ const articlesList = {
             description: "У цій статті ми розглянемо поради та практичні рекомендації щодо розробки мобільних додатків у позашкільній освіті, які допоможуть створити інноваційні та ефективні інструменти для навчання.",
             img: img3,
             reference: "https://bdut.co.ua/pro-nas/rozrobka-mobilnyh-dodatkiv/",
-            value: "Mobile"
+            value: "MobileDev"
         },
         {
             id: 4,
@@ -97,7 +97,7 @@ const articlesList = {
             description: "Мобільні програми стали вже невід'ємною частиною повсякденного життя. Вони допомагають нам робити покупки, спілкуватися з друзями, знаходити інформацію, розважатися. У зв'язку з цим розробка мобільних додатків стала затребуваним та перспективним напрямом у сфері IT.",
             img: img4,
             reference: "https://cloud.itstep.org/blog_3/the-latest-technologies-in-mobile-application-development-top-tools-and-trends",
-            value: "Mobile"
+            value: "MobileDev"
         },
         {
             id: 5,
@@ -105,7 +105,7 @@ const articlesList = {
             description: "Розробка мобільних додатків сьогодні є однією з найпопулярніших послуг на інформаційному ринку. Кількість користувачів додатків за допомогою різних мобільних платформ невпинно зростає.",
             img: img5,
             reference: "https://apeps.kpi.ua/rozrobka-mobilnykh-dodatkiv-i-yii-vidy",
-            value: "Mobile"
+            value: "MobileDev"
         }
     ],
     DataAnalyst : [
@@ -560,14 +560,14 @@ const articlesList = {
             value: "DesignBD"
         }
     ],
-    DesignGame: [
+    GameDesign: [
         {
             id: 60,
             title: "Що таке дизайн відеоігор: основні принципи геймдизайну",
             description: "Чому в ігровому процесі так важливе покрокове просування, що таке передчуття і прогресія, і як зробити гру динамічною — дізнаєтеся в цій статті.",
             img: imgGameDesign,
             reference: "https://vokigames.com/ua/scho-take-dizajn-videoigor-osnovni-printsipi-gejmdizajnu/",
-            value: "DesignGame"
+            value: "GameDesign"
         },
         {
             id: 61,
@@ -575,7 +575,7 @@ const articlesList = {
             description: "Часто можна зустріти достатньо скептичне ставлення до всього, що стосується комп’ютерних ігор. Мовляв, це виключно не дуже продуктивний спосіб, як вбити час з перспективою отримати бонус у вигляді погіршення зору. Та це не більше, ніж стереотип і упереджене ставлення щодо цієї індустрії. Так-так, саме індустрії, адже в 2020 році комп’ютерні ігри самі по собі та їхні інструменти використовуються в різноманітних сферах.",
             img: imgGameDesign2,
             reference: "https://mudra.ua/ua/articles/grovij-dizajn-profesya-majbutnogo/",
-            value: "DesignGame"
+            value: "GameDesign"
         },
         {
             id: 62,
@@ -583,7 +583,7 @@ const articlesList = {
             description: "Ми продовжуємо серію статей «Кар’єра в геймдеві», в якій ознайомлюємо з основними професіями індустрії. Минулого разу ми писали про Technical Artist, а тепер розповідаємо про нюанси роботи геймдизайнерів: як опанувати цей фах, що потрібно робити, які плюси та мінуси цієї професії.",
             img: imgGameDesign3,
             reference: "https://gamedev.dou.ua/articles/game-designer-in-gamedev/",
-            value: "DesignGame"
+            value: "GameDesign"
         },
         {
             id: 63,
@@ -591,7 +591,7 @@ const articlesList = {
             description: "Геймдизайнер – фахівець, який розробляє правила, стиль і дизайн комп'ютерних ігор. Роль геймдизайнера аналогічна ролі постановника завдання в звичайному програмуванні і режисера в кіно.",
             img: imgGameDesign4,
             reference: "https://designtalk.club/profesiya-gejmdyzajner-4-fakty-yaki-varto-znaty-pochatkivtsyam/",
-            value: "DesignGame"
+            value: "GameDesign"
         },
         {
             id: 64,
@@ -599,7 +599,7 @@ const articlesList = {
             description: "Всі ми любимо грати у відеоігри, але навряд чи хтось із нас задавався питанням «А як відбувається розробка відеоігор?». У цій статті ми постараємося розібратися в цьому питанні.",
             img: imgGameDesign5,
             reference: "https://blog.fugas.space/gamedev-stages/",
-            value: "DesignGame"
+            value: "GameDesign"
         }
     ]
 }
